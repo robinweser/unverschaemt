@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -o-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+input, textarea {
+    padding: 13px 10px 13px 14px;
+    font-size: 20px;
+    border-radius: 15px;
+    border-style: solid;
+    position: relative;
+    display: inline-block;
+    border-color: rgb(211, 211, 211);
+    vertical-align: top;
+    border-width: 1px;
+    margin-right: -8px;
+}
+textarea {
+    outline-width: 0;
+    outline: none;
+}
+input:hover, textarea:hover {
+    border-color: rgba(128, 128, 128, 0.88);
+    background-color: rgba(224, 224, 224, 0.2);
+    outline: none;
+}
+input:focus, textarea:focus {
+    border-color: rgba(128, 128, 128, 0.66);
+    background-color: rgba(224, 224, 224, 0.1);
+    outline: none;
+}
+body {
+    text-align: center;
+    font-family: Lato;
+    font-weight: 300;
+}
+b {
+    font-weight: 400;
+}
+html {
+    background-image: url('../res/background/landing.jpg');
+    background-size: 120% auto;
+    background-position: center bottom;
+    background-attachment: fixed;
+}
+header {
+    text-align: center;
+    min-height: 75%;
+    font-size: 22px;
+}
+header article {
+    padding: 6%;
+}
+header button {
+    font-size: 22px;
+}
+body {
+    font-size: 0;
+}
+main {
+    width: 100%;
+    font-size: 0;
+}
+section {
+    color: rgb(80, 80, 80);
+    background: white;
+}
+section p, section div {
+    padding: 2.5% 10% 4% 10%;
+    font-size: 22px;
+}
+section#team h1, section#skill h1, section#instagram h1 {
+    color: rgb(240, 240, 240)
+}
+section#team, section#skill, section#instagram b {
+    color: rgb(230, 230, 230);
+}
+section#team, section#skill, section#instagram {
+    color: rgb(220, 220, 220);
+    background-size: cover !important;
+    background-attachment: fixed !important;
+}
+section#team {
+    background: url('../res/background/member.jpg') center;
+    font-size: 0;
+}
+section#skill {
+    background: #848484;
+    font-size: 0;
+}
+section#instagram {
+    background: url('../res/background/instagram.jpg') center;
+    font-size: 0;
+}
+section#team figure {
+    width: 32%;
+    max-width: 300px;
+    margin: 0;
+    display: inline-block;
+    padding: 2%;
+    vertical-align: top;
+    font-size: 25px;
+}
+section#team figure b {
+    display: block;
+}
+section#team figure span {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 300;
+    vertical-align: 5px;
+}
+section#team figure img {
+    width: 70%;
+    height: auto;
+    margin-bottom: 6px;
+    border: 1px solid rgb(120, 120, 120);
+    background-color: white;
+}
+section h1 {
+    color: #646464;
+    font-size: 60px;
+}
+section h2 {
+    color: rgb(60, 60, 60);
+    font-size: 30px;
+}
+h2, h1 {
+    font-weight: normal;
+}
+h1 {
+    font-family: 'UnverschaemtSans';
+    line-height: 70px;
+    margin: 0;
+    font-size: 70px;
+    color: #505050;
+    text-transform: lowercase;
+}
+h2 {
+    color: #6c6c6c;
+    font-weight: 200;
+}
+nav {
+    display: block;
+    z-index: 50;
+    position: fixed;
+    width: 28px;
+    height: 100%;
+    padding-left: 11px;
+    font-size: 16px;
+    text-align: left;
+}
+nav ul {
+    margin-top: 200px;
+}
+nav ul li {
+    width: 200px;
+    padding: 3px;
+    height: 19px;
+    position: relative;
+    display: block;
+}
+nav ul li span {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    background-color: rgb(120, 120, 120);
+}
+nav ul li span:hover {
+    cursor: pointer;
+}
+nav ul li p {
+    opacity: 0.0;
+    display: inline-block;
+    padding-left: 3px;
+    color: #898989;
+    font-weight: 200;
+    vertical-align: 1px;
+    z-index: 500;
+}
+nav ul li span:hover ~ p {
+    opacity: 1.0;
+    color: gray;
+}
+nav ul li span.active {
+    background-color: transparent;
+    border: 1px solid rgb(93, 93, 93);
+    margin-left: -2px;
+    margin-right: -2px;
+    width: 12px;
+    height: 12px;
+}
+nav i {
+    padding: 8px 9px 8px 0px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 30px;
+    z-index: 120;
+}
+nav i:hover {
+    color: #393939;
+}
+nav ul:nth-child(2n-1) li {
+    color: rgb(220, 220, 220);
+}
+nav ul li span, .round, section#team figure img, #products article img {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+button {
+    background: transparent;
+    padding: 10px 16px 12px 16px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 1px solid rgb(210, 210, 210);
+    font-size: 20px;
+}
+button:hover {
+    cursor: pointer;
+    border-color: rgb(100, 100, 100);
+}
+button.light {
+    border-color: rgb(220, 220, 220);
+    color: rgb(220, 220, 220);
+}
+button.light:hover {
+    border-color: rgb(150, 150, 150);
+}
+button.reverse {
+    border-color: rgb(100, 100, 100);
+}
+button.reverse:hover {
+    border-color: rgb(180, 180, 180);
+    color: rgb(100, 100, 100);
+}
+button:hover {
+    margin-top: 1px;
+}
+.border {
+    border: 1px solid rgb(200, 200, 200);
+}
+.unverschaemt {
+    font-family: 'UnverschaemtSans';
+    font-size: 24px;
+}
+#contact-formular {
+    width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+}
+#contact textarea {
+    height: 150px;
+    max-width: 100%;
+    margin-bottom: 35px;
+}
+#contact label {
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding-left: 5px;
+}
+#contact label i {
+    color: rgb(170, 170, 170)
+}
+#products article {
+    width: 32%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 18px;
+    padding: 20px;
+    max-width: 300px;
+}
+#products article img {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 8px;
+}
+#products article img, #products article h2 {
+    cursor: pointer;
+}
+#products article i {
+    color: rgb(180, 180, 180);
+}
+a {
+    text-decoration: none;
+    color: gray;
+}
