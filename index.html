@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body onscroll="view.onPageScroll()">
     <nav>
         <i onclick="view.scrollTo(0)" class="fa fa-chevron-up invisible"></i>
         <ul>
@@ -73,7 +73,6 @@
             </li>
         </ul>
     </nav>
-    <img id="scroll-arrow" src="res/scroller.svg">
 
     <header>
         <article>
@@ -82,8 +81,9 @@
         </article>
         <button onclick="view.openNewsletterBox()" class="reverse">Get Newsletter</button>
     </header>
-    <img src="res/rectangle.svg" style="width: 100%">
+
     <main>
+        <img src="res/rectangle.svg" style="width: 100%">
         <section id="about">
             <h1>About.</h1>
             <div>
@@ -236,6 +236,7 @@
                 </article>
                 <article>
                     <h2>Pin Fever</h2>
+                    <span>Pin Fever is a turn based game to challenge your friends with geographical skills.</span>
                 </article>
                 <article>
                     <h2><a href="http://unverschaemt.github.io/perfectfont/">Perfect Font</a></h2>
@@ -363,6 +364,7 @@
             </div>
         </section>
     </main>
+    <script type="text/javascript" src="js/obscene.js"></script>
     <script type="text/javascript" src="js/view.js"></script>
     <script type="text/javascript" src="js/controller.js"></script>
 </body>

@@ -1,16 +1,78 @@
 var view = {
+    totalHeight: undefined,
+    scrollTop: null,
+    scrollTops: [],
+    currentDot: undefined,
+    pages: {
+        "home": 0,
+        "about": 1,
+        "team": 2,
+        "skill": 3,
+        "products": 4,
+        "instagram": 5,
+        "socials": 6,
+        "impressum": 7,
+        "contact": 8
+    },
+    init: function() {
+        view.totalHeight = document.getElementsByTagName("html")[0].clientHeight;
+        view.scrollTops.push(0);
+        view.scrollTops.push(document.getElementById('about').offsetTop + 200);
+        view.scrollTops.push(document.getElementById('team').offsetTop);
+        view.scrollTops.push(document.getElementById('skill').offsetTop);
+        view.scrollTops.push(document.getElementById('products').offsetTop);
+        view.scrollTops.push(document.getElementById('instagram').offsetTop);
+        view.scrollTops.push(document.getElementById('socials').offsetTop);
+        view.scrollTops.push(document.getElementById('impressum').offsetTop);
+        view.scrollTops.push(document.getElementById('contact').offsetTop);
+    },
+    onPageLoad: function() {
+        view.doLayout();
+        scrollTop = 0;
+        currentDot = 0;
+    },
+    onPageScroll: function() {
+        view.scrollTop = window.pageYOffset;
+        if (view.currentDot == 0) {
+            view.parallaxBackground();
+        }
+        console.log(view.scrollTop);
+        for (var i = view.pages["contact"]; i >= 0; --i) {
+            if (view.scrollTop >= view.scrollTops[i]) {
+                view.setNavigationDot(i);
+                return;
+            }
+        }
+    },
+    setNavigationDot: function(dot) {
+        if (dot != view.currentDot) {
+            document.getElementsByClassName("active")[0].classList.remove("active");
+            obscene.getFirstTag("nav").getElementsByTagName("li")[dot].getElementsByTagName("span")[0].classList.add("active");
 
+            view.currentDot = dot;
+        }
+        if (dot == 0) {
+            /*document.getElementById("scroll-arrow").classList.remove("opacity-hidden");
+            document.getElementById("navigation-home").classList.add("opacity-hidden");*/
+        } else {
+            /*document.getElementById("navigation-home").classList.remove("opacity-hidden");*/
+        }
+    },
+    doLayout: function() {
+        view.init();
+        document.body.style.setProperty("height", view.totalHeight);
+        var ul = document.getElementsByTagName('nav')[0].getElementsByTagName('ul')[0];
+        ul.style.setProperty("margin-top", ((view.totalHeight - ul.clientHeight - 20) / 2) + "px");
+    },
+    parallaxBackground: function() {
+        obscene.setStyle(document.body, "background-size", Math.max(100, 120 + (document.body.scrollTop / 8)) + "% auto");
+    }
 }
 
-//--CONFIG
-var contentHeight;
-var scrollTop;
-var scrollTops;
-var pages = 9;
-var currentDot;
-//--CONFIG-END
+window.onload = view.onPageLoad;
 
 
+/*
 //SOCIAL-MEDIA
 (function(i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
@@ -37,34 +99,6 @@ ga('send', 'pageview');
 }(document, 'script', 'facebook-jssdk'));
 
 
-function loadPage() {
-    relocateContentElements();
-    scrollTop = 0;
-    currentDot = 0;
-}
-
-function relocateContentElements() {
-    initializeHeight();
-    var ul = document.getElementsByTagName('nav')[0].getElementsByTagName('ul')[0];
-    debugger;
-    ul.style.setProperty("margin-top", ((contentHeight - ul.clientHeight - 20) / 2) + "px");
-}
-
-
-function initializeHeight() {
-    contentHeight = document.getElementsByTagName("html")[0].clientHeight;
-    var halfContentHeight = (contentHeight / 2);
-    scrollTops = [];
-    scrollTops.push(0);
-    scrollTops.push(document.getElementById('about').offsetTop - halfContentHeight - 60);
-    scrollTops.push(document.getElementById('team').offsetTop - halfContentHeight);
-    scrollTops.push(document.getElementById('skill').offsetTop - halfContentHeight);
-    scrollTops.push(document.getElementById('products').offsetTop - halfContentHeight - 120);
-    scrollTops.push(document.getElementById('instagram').offsetTop - halfContentHeight);
-    scrollTops.push(document.getElementById('socials').offsetTop - halfContentHeight - 120);
-    scrollTops.push(document.getElementById('impressum').offsetTop - halfContentHeight);
-    scrollTops.push(document.getElementById('contact').offsetTop - halfContentHeight);
-}
 
 function validateEmail(email) {
     var regEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -233,4 +267,4 @@ window.onbeforeunload = function(e) {
     window.scrollTo(0, 0);
 };
 window.onload = loadPage;
-window.onresize = relocateContentElements;
+window.onresize = relocateContentElements;*/
