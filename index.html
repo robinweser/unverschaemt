@@ -26,9 +26,9 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="res/icon.png" type="image/x-icon">
     <link rel="icon" href="res/icon.png" type="image/x-icon">
-    <link type="text/css" rel="stylesheet" href="css/normalize.css">
-    <link type="text/css" rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
         <ul>
             <li onclick="view.scrollTo('home')">
                 <span class="active"></span>
-                <p>Home.</span>
+                <p>Home.</p>
             </li>
             <li onclick="view.scrollTo('about')">
                 <span></span>
@@ -69,6 +69,7 @@
             </li>
         </ul>
     </nav>
+    <img id="scroll-arrow" src="res/scroller.svg">
 
     <header>
         <article>
@@ -79,10 +80,10 @@
     </header>
     <img src="res/rectangle.svg" style="width: 100%">
     <main>
-        <section>
+        <section id="about">
             <h1>About.</h1>
             <p>
-                <img src="res/logo.svg" width=200 height=200 class="round border">
+                <img src="res/logo.svg" class="round border">
                 <br>
                 <br>
                 <b class="unverschaemt">unverschämt.</b> is an independent developer team. It was founded by five single-minded science students.
@@ -91,6 +92,7 @@
                 <br>
                 <br>
                 <button onclick="view.scrollTo('contact')">Feel free to contact us</button>
+                <br>
             </p>
         </section>
         <section id="team">
@@ -98,31 +100,31 @@
             <h1>Team.</h1>
             <br>
             <div>
-                <figure class="invisble">
+                <figure>
                     <img src="res/team/david.png">
                     <br>David Ehlen
                     <b>iOS Developer</b>
-                    <span>Hardware Developer</span>
+                    <span>Hardware Engineer</span>
                 </figure>
-                <figure class="invisble">
+                <figure>
                     <img src="res/team/david.png">
                     <br>Dustin Hoffner
                     <b>Software Architect</b>
                     <span>React Developer</span>
                 </figure>
-                <figure class="invisble">
+                <figure>
                     <img src="res/team/robin.png">
                     <br>Robin Frischmann
                     <b>UI/UX Designer</b>
                     <span>React Developer</span>
                 </figure>
-                <figure class="invisble">
-                    <img src="res/team/david.png">
+                <figure>
+                    <img src="res/team/nils.png">
                     <br>Nils Hirsekorn
                     <b>Algorithm Engineer</b>
                     <span>Android Developer</span>
                 </figure>
-                <figure class="invisble">
+                <figure>
                     <img src="res/team/robin.png">
                     <br>Simon Korz
                     <br><b>Server Developer</b>
@@ -150,37 +152,50 @@
                 <article>
                     <img src="res/product/sp.png">
                     <h2>Stock Party</h2>
-                    Stock Party is an application that takes your party to the next level.
-                    <br> Drinks are calculated by supply and demand.
+                    <span>Stock Party is an application that takes your party to the next level.
+                        <br> Drinks are calculated by supply and demand.
+                    </span>
                 </article>
                 <article>
                     <img src="res/product/ms2.png">
                     <h2>Monster Safari</h2>
-                    Prepare for a new, epic journey.
-                    <br> Dominate your enemies and friends.
+                    <span>Prepare for a new, epic journey.
+                        <br> Dominate your enemies and friends.</span>
                 </article>
                 <article>
                     <img src="res/product/pf.png">
                     <h2>PfApp</h2>
-                    PfApp is an organisation and planing tool for scouts.
-                    <br> It is based on Obscene UI and was especially built for <a href="http://bdp-rps.de/">BdP LV RPS</a>.
+                    <span>PfApp is an organisation and planing tool for scouts.
+                        <br> It is based on Obscene UI and was especially built for <a href="http://bdp-rps.de/">BdP LV RPS</a>.</span>
                 </article>
-                <article>
-                    <img src="res/product/ms2.png">
-                    <h2>Perfect Font</h2>
-                    Perfect Font is a simple tool which helps you to test hundreds of fonts in realtime within your live previewed web-project.
+                <span class="splitter">
                     <br>
-                    <i>open source.</i>
-                </article>
+                    <br>
+                    <hr>
+                    <br>
+                </span>
                 <article>
-                    <img src="res/product/ms2.png">
                     <h2>Obscene UI</h2>
-                    Obscene UI is a responsive, mobile-friendly UI-Template to build stable and beautiful app themes.
+                    <b>open source.</b>
+                    <span>
+                        <br>Obscene UI is a responsive, mobile-friendly UI-Template to build stable and beautiful app themes.</span>
                     <br>
-                    <i>open source.</i>
+                </article>
+                <article>
+                    <h2>Pin Fever</h2>
+
+                </article>
+                <article>
+
+                    <h2>Perfect Font</h2>
+                    <b>open source.</b>
+                    <span>
+                        <br>Perfect Font is a simple tool which helps you to test hundreds of fonts in realtime within your live previewed web-project.</span>
+                    <br>
                 </article>
             </div>
         </section>
+
         <section id="instagram">
             <img src="res/rectangle.svg" style="width: 100%; -webkit-transform: rotate(180deg)">
             <h1>Instagram.</h1>
@@ -194,6 +209,86 @@
             </p>
             <img src="res/rectangle.svg" style="width: 100%">
         </section>
+
+        <section id="social-networks">
+            <h1>Social networks.</h1>
+            <div>
+                We recommend to connect with us via social networks to get new information immediately.
+                <br>Currently we are represent on Facebook, Twitter and Instagram.
+                <br>
+                <br>
+                <div class="social-network">
+                    <img src="res/icon/fb.svg" onclick="view.loadFacebook()">
+                    <b>Facebook.</b>
+                    <span>
+                        <br>You will find all kind of new information immediately there.
+                    </span>
+                </div>
+                <div class="social-network">
+                    <img src="res/icon/instagram.svg" onclick="view.loadInstagram()">
+                    <b>Instagram.</b>
+                    <span>
+                        <br>We frequently post some daily shots.
+                    </span>
+                </div>
+                <div class="social-network">
+                    <img src="res/icon/tumblr.svg" id="tumblr" onclick="view.loadBlog()">
+                    <b>Blog.</b>
+                    <span>
+                        <br>We blog about product information and our development process.
+                    </span>
+                </div>
+                <br>
+                <div class="social-networks-follow">
+                    <a href="javascript:view.loadFacebook()">
+                    Like us on Facebook
+                   <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </div>
+                <div class="social-networks-follow">
+                    <a href="javascript:view.loadInstagram()">
+                    Follow us on Instagram
+                    <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </div>
+                <div class="social-networks-follow">
+                    <a href="javascript:view.loadBlog()">
+                    Follow our blog
+                    <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="impressum">
+            <img src="res/rectangle.svg" style="width: 100%; -webkit-transform: rotate(180deg)">
+            </div>
+            <h1>impressum.</h1>
+            <p>
+                <b>Responsible according to § 10 paragraph 3 MDStV</b>
+                <br>
+                <b class="unverschaemt">unverschämt.</b>
+                <br>
+                <br>David Ehlen
+                <br>Dustin Hoffner
+                <br>Robin Frischmann
+                <br>Nils Hirsekorn
+                <br>Simon Korz
+                <br>
+                <br>
+                <br>76131 Karlsruhe
+                <br>
+                <b><a href="mailto:support@unverschaemt.net">support@unverschaemt.net</a></b>
+                <br>
+                <br>
+                <b>Notice of Liability</b>
+                <br>Despite careful control we assume no liability for the content of external links.
+                <br>You yourself are solely responsible for the content of linked pages.
+            </p>
+            <img src="res/rectangle.svg" style="width: 100%;">
+            </div>
+        </section>
+
         <section id="contact">
             <h1>contact.</h1>
             <div class="inner-text">
@@ -209,6 +304,7 @@
                     <label>Request</label>
                     <textarea id="contact-request" type="text" placeholder="Enter your request here ..."></textarea>
                     <button onclick="controller.sendContactRequest()">Send</button>
+                    <br>
                 </div>
             </div>
         </section>

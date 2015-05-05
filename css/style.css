@@ -61,7 +61,7 @@ body {
 b {
     font-weight: 400;
 }
-html {
+body {
     background-image: url('../res/background/landing.jpg');
     background-size: 120% auto;
     background-position: center bottom;
@@ -93,18 +93,22 @@ section p, section div {
     padding: 2.5% 10% 4% 10%;
     font-size: 22px;
 }
-section#team h1, section#skill h1, section#instagram h1 {
+section#team h1, section#skill h1, section#instagram h1, section#impressum h1 {
     color: rgb(240, 240, 240)
 }
-section#team, section#skill, section#instagram b {
+section#team, section#skill, section#instagram b, section#impressum b {
     color: rgb(230, 230, 230);
 }
-section#team, section#skill, section#instagram {
+section#team, section#skill, section#instagram, section#impressum {
     color: rgb(220, 220, 220);
     background-size: cover !important;
     background-attachment: fixed !important;
 }
 section#team {
+    background: url('../res/background/member.jpg') center;
+    font-size: 0;
+}
+section#impressum {
     background: url('../res/background/member.jpg') center;
     font-size: 0;
 }
@@ -140,6 +144,7 @@ section#team figure img {
     margin-bottom: 6px;
     border: 1px solid rgb(120, 120, 120);
     background-color: white;
+    vertical-align: middle;
 }
 section h1 {
     color: #646464;
@@ -215,12 +220,16 @@ nav ul li span.active {
     height: 12px;
 }
 nav i {
-    padding: 8px 9px 8px 0px;
+    padding: 8px 9px 8px 9px;
     position: absolute;
     left: 0;
     top: 0;
-    font-size: 30px;
+    font-size: 35px !important;
     z-index: 120;
+    color: rgb(150, 150, 150);
+}
+nav i:hover {
+    color: rgb(120, 120, 120);
 }
 nav i:hover {
     color: #393939;
@@ -228,7 +237,7 @@ nav i:hover {
 nav ul:nth-child(2n-1) li {
     color: rgb(220, 220, 220);
 }
-nav ul li span, .round, section#team figure img, #products article img {
+nav ul li span, .round, section#team figure img, #products article img, .social-network img {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -267,6 +276,7 @@ button.reverse:hover {
 }
 button:hover {
     margin-top: 1px;
+    margin-bottom: -1px;
 }
 .border {
     border: 1px solid rgb(200, 200, 200);
@@ -274,6 +284,10 @@ button:hover {
 .unverschaemt {
     font-family: 'UnverschaemtSans';
     font-size: 24px;
+}
+section#about img {
+    width: 200px;
+    height: 200px;
 }
 #contact-formular {
     width: 100%;
@@ -316,10 +330,352 @@ button:hover {
 #products article img, #products article h2 {
     cursor: pointer;
 }
-#products article i {
+#products article b {
     color: rgb(180, 180, 180);
+    display: block;
+    margin-bottom: 10px;
+}
+hr {
+    border: 0;
+    border-bottom: 1px solid lightgray;
+    margin: 10px 10%;
 }
 a {
     text-decoration: none;
     color: gray;
+}
+a:hover {
+    border-bottom: 2px solid lightgray;
+}
+.social-network {
+    width: 30%;
+    display: inline-block;
+    padding: 3% 2% 4%;
+    vertical-align: top;
+    text-align: center;
+}
+.social-network img {
+    height: 80px;
+    width: 80px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 4px;
+}
+.social-network img:hover {
+    cursor: pointer;
+    margin-bottom: 3px;
+    margin-top: 1px;
+}
+.social-network span {
+    display: block;
+    line-height: 18px;
+    padding-top: 5px;
+    font-size: 18px;
+}
+.social-networks-follow {
+    width: 30%;
+    display: inline-block;
+    padding: 0% 3%;
+    font-size: 20px;
+    line-height: 20px;
+    vertical-align: top;
+}
+.social-networks-follow i {
+    vertical-align: 1px;
+    font-size: 14px;
+}
+.social-networks-follow a {
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+}
+.social-networks-follow a:hover {
+    color: rgb(50, 50, 50);
+    text-decoration: none;
+}
+section#impressum a {
+    color: rgb(230, 230, 230);
+}
+section#impressum .unverschaemt {
+    font-size: 30px;
+}
+@-webkit-keyframes bounce-up-down {
+    0% {
+        -ms-transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        -ms-transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    100% {
+        -ms-transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}
+@-moz-keyframes bounce-up-down {
+    0% {
+        -ms-transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        -ms-transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    100% {
+        -ms-transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}
+@-o-keyframes bounce-up-down {
+    0% {
+        -ms-transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        -ms-transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    100% {
+        -ms-transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}
+@keyframes bounce-up-down {
+    0% {
+        -ms-transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        -ms-transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    100% {
+        -ms-transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}
+#scroll-arrow {
+    -webkit-animation: bounce-up-down 2s infinite;
+    -moz-animation: bounce-up-down 2s infinite;
+    -o-animation: bounce-up-down 2s infinite;
+    -ms-animation: bounce-up-down 2s infinite;
+    animation: bounce-up-down 2s infinite;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 300;
+}
+/* TRANSITIONS */
+
+button {
+    -webkit-transition: all 100ms ease-in-out;
+    -moz-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    -ms-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+nav span.current {
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+nav p {
+    -webkit-transition-property: opacity, margin;
+    -webkit-transition-duration: 400ms, 400ms;
+    -webkit-transition-timing-function: ease-in-out, ease-in-out;
+    -moz-transition-property: opacity, margin;
+    -moz-transition-duration: 400ms, 400ms;
+    -moz-transition-timing-function: ease-in-out, ease-in-out;
+    -ms-transition-property: opacity, margin;
+    -ms-transition-duration: 400ms, 400ms;
+    -ms-transition-timing-function: ease-in-out, ease-in-out;
+    -o-transition-property: opacity, margin;
+    -o-transition-duration: 400ms, 400ms;
+    -o-transition-timing-function: ease-in-out, ease-in-out;
+    transition-property: opacity, margin;
+    transition-duration: 400ms, 400ms;
+    transition-timing-function: ease-in-out, ease-in-out;
+}
+/* Responsive */
+
+@media (max-width: 1105px) {
+    body {
+        background-size: auto 160%;
+    }
+    .social-network span, .social-network b, .social-networks-follow, section#products span {
+        display: none;
+    }
+    section#products span.splitter {
+        display: block;
+    }
+    .social-network {
+        width: auto;
+    }
+    section h1 {
+        font-size: 50px;
+    }
+}
+@media (max-width: 800px) {
+    nav {
+        display: none;
+    }
+    #scroll-arrow {
+        display: none;
+    }
+    section#team figure {
+        width: 50%;
+        margin: 0 -2px;
+        font-size: 22px;
+        padding: 0;
+        margin-bottom: 40px;
+        height: auto;
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+    }
+    section#products article {
+        width: 48%;
+        margin-bottom: 2px;
+    }
+    section#products span.splitter {
+        display: none;
+    }
+    header h1 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+    section#about img {
+        width: 150px;
+        height: 150px;
+    }
+}
+@media (max-width: 500px) {
+    section h1 {
+        font-size: 35px;
+        padding: 5% 10%;
+    }
+    section#team figure {
+        width: 100%;
+        margin-bottom: 14px;
+        height: auto;
+        text-align: left;
+        font-size: 20px;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+    }
+    section#products h2 {
+        font-size: 25px;
+        line-height: 22px;
+    }
+    section#products img {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 0;
+    }
+    section#products article {
+        width: 80%;
+        padding: 5px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid lightgray;
+    }
+    section#products article:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    section#products article:last-child {
+        width: 80%;
+        padding: 5px;
+        padding-bottom: 10px;
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+    .social-network img {
+        height: 72px;
+        width: 72px;
+    }
+    section#team figure img {
+        width: 33%;
+        float: left;
+        margin-right: 15px;
+    }
+    header h1 {
+        font-size: 45px;
+        line-height: 45px;
+    }
+    header h2 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    header article {
+        padding: 12% 6%;
+    }
+    section p, section div {
+        padding: 8% 10% 8% 10%;
+        font-size: 20px;
+    }
+    section#contact div.inner-text {
+        padding: 10px;
+        padding-bottom: 40px;
+    }
+}
+@media (max-width: 350px) {
+    section p, section div {
+        padding: 8% 10% 8% 10%;
+        font-size: 20px;
+    }
+    section#team figure img {
+        display: inline-block;
+        width: 27%;
+        vertical-align: -3%;
+        margin-right: 8px;
+        margin-bottom: 0;
+    }
+    section#team figure span {
+        display: none;
+    }
+    .social-network {
+        display: inline-block;
+        width: 40%;
+        padding: 0%;
+    }
+    button {
+        font-size: 21px;
+    }
+    section h1 {
+        font-size: 30px;
+        padding: 3% 10%;
+    }
+    #team figure {
+        width: 100%;
+        margin: 0 -2px;
+        padding: 0;
+        margin-bottom: 40px;
+        height: auto;
+        text-align: center;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+    }
+    #team figure img {
+        width: 60%;
+        float: none;
+    }
 }
