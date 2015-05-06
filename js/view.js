@@ -3,41 +3,26 @@ var view = {
     scrollTop: null,
     scrollTops: [],
     currentDot: undefined,
-    pages: {
-        "home": 0,
-        "about": 1,
-        "team": 2,
-        "skill": 3,
-        "products": 4,
-        "instagram": 5,
-        "socials": 6,
-        "impressum": 7,
-        "contact": 8
-    },
+    pages: ["about", "team", "skill", "products", "instagram", "socials", "impressum", "contact"],
     init: function() {
-        view.totalHeight = document.getElementsByTagName("html")[0].clientHeight;
+        view.totalHeight = obscene.getFirstTag("html").clientHeight;
         view.scrollTops.push(0);
-        view.scrollTops.push(document.getElementById('about').offsetTop + 200);
-        view.scrollTops.push(document.getElementById('team').offsetTop);
-        view.scrollTops.push(document.getElementById('skill').offsetTop);
-        view.scrollTops.push(document.getElementById('products').offsetTop);
-        view.scrollTops.push(document.getElementById('instagram').offsetTop);
-        view.scrollTops.push(document.getElementById('socials').offsetTop);
-        view.scrollTops.push(document.getElementById('impressum').offsetTop);
-        view.scrollTops.push(document.getElementById('contact').offsetTop);
+        view.pages.forEach(function(item) {
+            var page = obscene.getId(item);
+            view.scrollTops.push(page.offsetTop + (view.totalHeight / 2) - 60);
+        });
     },
     onPageLoad: function() {
         view.doLayout();
-        scrollTop = 0;
-        currentDot = 0;
+        view.scrollTop = 0;
+        view.currentDot = 0;
     },
     onPageScroll: function() {
         view.scrollTop = window.pageYOffset;
         if (view.currentDot == 0) {
             view.parallaxBackground();
         }
-        console.log(view.scrollTop);
-        for (var i = view.pages["contact"]; i >= 0; --i) {
+        for (var i = view.pages.length; i >= 0; --i) {
             if (view.scrollTop >= view.scrollTops[i]) {
                 view.setNavigationDot(i);
                 return;
@@ -48,14 +33,14 @@ var view = {
         if (dot != view.currentDot) {
             document.getElementsByClassName("active")[0].classList.remove("active");
             obscene.getFirstTag("nav").getElementsByTagName("li")[dot].getElementsByTagName("span")[0].classList.add("active");
-
+            view.hideNavigationText(view.currentDot);
+            view.showNavigationText(dot);
             view.currentDot = dot;
         }
         if (dot == 0) {
-            /*document.getElementById("scroll-arrow").classList.remove("opacity-hidden");
-            document.getElementById("navigation-home").classList.add("opacity-hidden");*/
+            view.hide(document.getElementsByClassName("fa-chevron-up")[0]);
         } else {
-            /*document.getElementById("navigation-home").classList.remove("opacity-hidden");*/
+            view.show(document.getElementsByClassName("fa-chevron-up")[0]);
         }
     },
     doLayout: function() {
@@ -64,207 +49,82 @@ var view = {
         var ul = document.getElementsByTagName('nav')[0].getElementsByTagName('ul')[0];
         ul.style.setProperty("margin-top", ((view.totalHeight - ul.clientHeight - 20) / 2) + "px");
     },
+    show: function(el) {
+        return el.classList.contains("invisible") && el.classList.remove("invisible");
+    },
+    hide: function(el) {
+        return el.classList.contains("invisible") && el.classList.add("invisible");
+    },
+    closeNewsletterButton: function() {
+        var newsletterButton = obscene.getFirstTag("header").getElementsByTagName("button")[0];
+        setTimeout(obscene.setStyle(newsletterButton, "border-radius", "50x"), 800);
+        setTimeout(obscene.setStyle(newsletterButton, "opacity", "0.3"), 200);
+        setTimeout(obscene.setStyle(newsletterButton, "z-index", "-1"), 801);
+        setTimeout(function() {
+            newsletterButton.innerHTML = "Sent"
+        }, 800);
+    },
+    showNewsletterForm: function() {
+        document.getElementById('newsletter-container').style.display = "inline-block";
+        document.getElementById('newsletter-mail').value = "";
+        setTimeout('document.getElementById("newsletter-box").classList.remove("scale-out")', 30);
+        document.getElementById('subscribe-newsletter').focus();
+    },
+    hideNewsletterForm: function(force) {
+        var targetItem = event.target.toString();
+        if (targetItem.indexOf("Dialog") != -1 || targetItem.indexOf("Unknown") != -1 || force == true) {
+            document.getElementById('newsletter-box').classList.add("scale-out");
+            setTimeout('document.getElementById("newsletter-container").style.display = "none"', 420);
+        }
+    },
+    showNavigationText: function(dot) {
+        var navigationText = obscene.getFirstTag("nav").getElementsByTagName("li")[dot].getElementsByTagName("p")[0];
+
+        navigationText.classList.remove("invisible");
+        setTimeout(function() {
+            navigationText.classList.add("invisible");
+        }, 800);
+    },
+    hideNavigationText: function(dot) {
+        obscene.getFirstTag("nav").getElementsByTagName("p")[dot].classList.add("invisible");
+    },
+    scrollTo: function(index) {
+        if (index == "home") {
+            index = 0;
+        } else {
+            index = view.pages.indexOf(index) + 1;
+        }
+        document.body.classList.add("transition-800");
+        document.body.style.marginTop = (view.scrollTop - (view.scrollTops[index] + (index == 0 ? 0 : 300))) + "px";
+        setTimeout('document.body.classList.remove("transition-800")', 800);
+        setTimeout('document.body.style.marginTop = "0px"', 801);
+        setTimeout('document.body.scrollTop = ' + (view.scrollTops[index] + (index == 0 ? 0 : 300)), 805);
+        view.onPageScroll();
+        view.parallaxBackground();
+    },
+    showPopup: function(success, failResponse) {
+        popup.style.display = "inline-block";
+        if (success) {
+            popup.getElementsByTagName("h2")[0].innerHTML = "Success";
+            message.innerHTML = failResponse;
+        } else {
+            popup.getElementsByTagName("h2")[0].innerHTML = "Failed";
+            message.innerHTML = failResponse;
+        }
+        setTimeout('document.getElementById("message-box").classList.remove("scale-out")', 30);
+    },
+    hidePopup: function() {
+        document.getElementById('message-box').classList.add("scale-out");
+        setTimeout('popup.style.display = "none"', 420);
+    },
     parallaxBackground: function() {
-        obscene.setStyle(document.body, "background-size", Math.max(100, 120 + (document.body.scrollTop / 8)) + "% auto");
+        obscene.setStyle(document.body, "background-size", Math.max(100, 120 + (view.scrollTop / 8)) + "% auto");
     }
 }
 
 window.onload = view.onPageLoad;
+window.onresize = view.doLayout;
 
-
-/*
-//SOCIAL-MEDIA
-(function(i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    i[r] = i[r] || function() {
-        (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date();
-    a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m)
-})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-ga('create', 'UA-52552266-1', 'auto');
-ga('require', 'displayfeatures');
-ga('send', 'pageview');
-(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&appId=254135427968559&version=v2.0";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-
-
-function validateEmail(email) {
-    var regEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return regEx.test(email);
-}
-
-
-function openNewsletterForm() {
-    document.getElementById('newsletter-container').style.display = "inline-block";
-    document.getElementById('newsletter-mail').value = "";
-    setTimeout('document.getElementById("newsletter-box").classList.remove("scale-out")', 30);
-    document.getElementById('subscribe-newsletter').focus();
-}
-
-function hideNewsletterForm(force) {
-    var targetItem = event.target.toString();
-    if (targetItem.indexOf("Dialog") != -1 || targetItem.indexOf("Unknown") != -1 || force == true) {
-        document.getElementById('newsletter-box').classList.add("scale-out");
-        setTimeout('document.getElementById("newsletter-container").style.display = "none"', 420);
-    }
-}
-
-function aboNewsletter() {
-    var getNewsletterButtonText = document.getElementById('subscribe-newsletter').innerHTML;
-    var mail = document.getElementById('newsletter-mail').value;
-    if (validateEmail(mail)) {
-        sendNewsletterSubscriptionMail(mail);
-    } else {
-        showPopup(false, "Not a valid mail.");
-    }
-}
-
-function closeNewsletterButton() {
-    setTimeout('document.getElementById("subscribe-newsletter").style.borderRadius = "50px"', 800);
-    setTimeout('document.getElementById("subscribe-newsletter").innerHTML = "Sent"', 800);
-    setTimeout('document.getElementById("subscribe-newsletter").style.opacity = 0.3', 200);
-    setTimeout('document.getElementById("subscribe-newsletter").style.zIndex = "-1"', 801);
-}
-
-function sendNewsletterSubscriptionMail(mail) {
-    var request = new XMLHttpRequest();
-    request.open("POST", "php/sendSubscriptionMail.php", true);
-    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    request.onreadystatechange = function receive() {
-        if (request.readyState == 4) {
-            if (request.responseText == "1") {
-                showPopup(true, "We have sent a mail to you. <br>Please verify your mail.");
-                closeNewsletterButton();
-                hideNewsletterForm(true);
-            } else {
-                if (request.responseText == "2") {
-                    showPopup(true, "You already <br>have subscribed.")
-                } else {
-                    showPopup(false, "Please try again <br>or contact us.");
-                }
-            }
-        }
-    }
-    request.send("mail=" + mail);
-}
-
-function unsubscribeNewsletter(mail) {
-    var reqquest = new XMLHttpRequest();
-    request.open("POST", "php/unsubscribe.php", true);
-    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    request.onreadystatechange = function receive() {
-        if (request.readyState == 4) {
-            //TODO echo abfangen
-        }
-    }
-    request.send("mail=" + mail);
-}
-
-function showNavigationText(dot) {
-    document.getElementsByClassName("navigation-text")[dot].classList.add("opacity-full");
-    setTimeout('document.getElementsByClassName("navigation-text")[' + dot + '].classList.remove("opacity-full")', 800);
-}
-
-function hideNavigationText(dot) {
-    document.getElementsByClassName("navigation-text")[dot].classList.remove("opacity-full");
-}
-
-function setNavigationDot(dot) {
-    if (dot != currentDot) {
-        document.getElementsByClassName("current")[0].classList.remove("current");
-        document.getElementsByClassName("navigation-dot")[dot].classList.add("current");
-        hideNavigationText(currentDot);
-        showNavigationText(dot);
-        currentDot = dot;
-    }
-    if (dot == 0) {
-        document.getElementById("scroll-arrow").classList.remove("opacity-hidden");
-        document.getElementById("navigation-home").classList.add("opacity-hidden");
-    } else {
-        document.getElementById("navigation-home").classList.remove("opacity-hidden");
-    }
-}
-
-function slideNavigation() {
-    scrollTop = window.pageYOffset;
-    for (var i = pages - 1; i >= 0; --i) {
-        if (scrollTop >= scrollTops[i]) {
-            setNavigationDot(i);
-            return;
-        }
-    }
-}
-
-function scrollToPage(index) {
-    document.body.classList.add("transition-800");
-    document.body.style.marginTop = (scrollTop - (scrollTops[index] + (index == 0 ? 0 : 300))) + "px";
-    setTimeout('document.body.classList.remove("transition-800")', 800);
-    setTimeout('document.body.style.marginTop = "0px"', 801);
-    setTimeout('document.body.scrollTop = ' + (scrollTops[index] + (index == 0 ? 0 : 300)), 805);
-    slideNavigation();
-}
-
-function showPopup(success, failResponse) {
-    popup.style.display = "inline-block";
-    if (success) {
-        popup.getElementsByTagName("h2")[0].innerHTML = "Success";
-        message.innerHTML = failResponse;
-    } else {
-        popup.getElementsByTagName("h2")[0].innerHTML = "Failed";
-        message.innerHTML = failResponse;
-    }
-    setTimeout('document.getElementById("message-box").classList.remove("scale-out")', 30);
-}
-
-function closePopup() {
-    document.getElementById('message-box').classList.add("scale-out");
-    setTimeout('popup.style.display = "none"', 420);
-}
-
-function sendContactRequest() {
-    var contactMail = document.getElementById('contact-mail').value;
-    var contactSubject = escape(document.getElementById('contact-subject').value);
-    var contactRequest = document.getElementById('contact-request').value;
-    contactRequest = contactRequest.replace(/(\r\n|\n|\r)/gm, "<br>");
-    contactRequest = escape(contactRequest);
-    if (contactRequest != "" && contactRequest != undefined) {
-        if (validateEmail(contactMail)) {
-            var request = new XMLHttpRequest();
-            request.open("POST", "php/contact.php", true);
-            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            request.onreadystatechange = function receive() {
-                if (request.readyState == 4) {
-                    if (request.responseText) {
-                        document.getElementById('contact-subject').value = "";
-                        document.getElementById('contact-request').value = "";
-                        showPopup(true, "Request sent.");
-                    } else {
-                        showPopup(false, "Try again.");
-                    }
-                }
-            }
-            request.send("mail=" + contactMail + "&subject=" + contactSubject + "&message=" + contactRequest);
-        } else {
-            showPopup(false, "Not a valid mail.");
-        }
-    } else {
-        showPopup(false, "Enter a request.");
-    }
-}
 window.onbeforeunload = function(e) {
     window.scrollTo(0, 0);
 };
-window.onload = loadPage;
-window.onresize = relocateContentElements;*/

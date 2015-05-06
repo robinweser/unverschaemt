@@ -32,44 +32,68 @@
 </head>
 
 <body onscroll="view.onPageScroll()">
+    <dialog id="popup">
+        <div id="message-box" class="scale-out">
+            <h2></h2>
+            <p id="message">
+            </p>
+            <button onclick="view.hidePopup()">Back</a>
+        </div>
+    </dialog>
+
+    <!-- NEWSLETTER -->
+    <dialog id="newsletter-container" onclick="hideNewsletterForm()">
+        <div id="newsletter-box" class="scale-out">
+            Enter your mail
+            <br>
+            <form action="javascript:controller.aboNewsletter()">
+                <input id="newsletter-mail" type="text" required="true" placeholder="max.mustermann@example.com">
+                <br>
+                <button onclick="controller.aboNewsletter()">Subscribe</a>
+            </form>
+        </div>
+    </dialog>
+
+
+
     <nav>
         <i onclick="view.scrollTo(0)" class="fa fa-chevron-up invisible"></i>
         <ul>
             <li onclick="view.scrollTo('home')">
                 <span class="active"></span>
-                <p>Home.</p>
+                <p class="invisible">Home.</p>
             </li>
             <li onclick="view.scrollTo('about')">
                 <span></span>
-                <p>About.</p>
+                <p class="invisible">About.</p>
             </li>
             <li class="light" onclick="view.scrollTo('team')">
                 <span></span>
-                <p>Team.</p>
+                <p class="invisible">Team.</p>
             </li>
             <li class="light" onclick="view.scrollTo('skill')">
                 <span></span>
-                <p>Skills.</p>
+                <p class="invisible">Skills.</p>
             </li>
             <li onclick="view.scrollTo('products')">
                 <span></span>
-                <p>Products.</p>
+                <p class="invisible">Products.</p>
             </li>
             <li class="light" onclick="view.scrollTo('instagram')">
                 <span></span>
-                <p>Instagram.</p>
+                <p class="invisible">Instagram.</p>
             </li>
             <li onclick="view.scrollTo('socials')">
                 <span></span>
-                <p>Social Networks.</p>
+                <p class="invisible">Social Networks.</p>
             </li>
             <li class="light" onclick="view.scrollTo('impressum')">
                 <span></span>
-                <p>Impressum.</p>
+                <p class="invisible">Impressum.</p>
             </li>
             <li onclick="view.scrollTo('contact')">
                 <span></span>
-                <p>Contact.</p>
+                <p class="invisible">Contact.</p>
             </li>
         </ul>
     </nav>

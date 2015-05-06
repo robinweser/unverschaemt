@@ -4,7 +4,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 ::-webkit-scrollbar {
     display: none;
 }
@@ -136,7 +135,7 @@ section#impressum {
     font-size: 0;
 }
 section#skill {
-    background: #727272;
+    background: #737373;
     font-size: 0;
 }
 section#skill div, section#about div, section#socials div, section#team h2, section#instagram div {
@@ -227,9 +226,8 @@ nav ul li span:hover {
     cursor: pointer;
 }
 nav ul li p {
-    opacity: 0.0;
     display: inline-block;
-    padding-left: 6px;
+    padding-left: 10px;
     font-size: 15px;
     color: #898989;
     font-weight: 200;
@@ -240,10 +238,9 @@ nav ul li span:hover ~ p {
     color: gray;
 }
 nav ul li span.active {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid rgb(50, 50, 50);
-    margin-left: -2px;
-    margin-right: -2px;
+    margin: 2px -2px -2px -2px;
     width: 12px;
     height: 12px;
 }
@@ -263,7 +260,7 @@ nav i:hover {
     color: #393939;
 }
 nav ul li.light p {
-    color: rgb(160, 160, 160) !important;
+    color: rgb(180, 180, 180) !important;
 }
 nav ul li span, .round, section#team figure img, .social-network img {
     -webkit-border-radius: 50%;
@@ -271,6 +268,9 @@ nav ul li span, .round, section#team figure img, .social-network img {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%;
+}
+.invisible {
+    opacity: 0.0;
 }
 button {
     background: transparent;
@@ -362,6 +362,60 @@ section#about img {
     display: block;
     font-weight: 200;
     margin-bottom: 10px;
+}
+/* POPUP */
+
+#popup, #newsletter-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+    background-color: rgba(40, 40, 40, 0.95);
+    display: none;
+}
+#newsletter-container {
+    z-index: 99;
+}
+#message-box {
+    left: 50%;
+    top: 50%;
+    margin: -150px 0 0 -150px;
+    height: 300px;
+    width: 300px;
+    padding-top: 80px;
+    text-align: center;
+    background-color: white;
+    position: fixed;
+}
+#newsletter-box {
+    width: 80%;
+    top: 50%;
+    left: 10%;
+    margin: -150px 0;
+    padding: 20px 20px 40px 20px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    position: fixed;
+    text-align: center;
+    color: rgb(200, 200, 200) !important;
+}
+#newsletter-box form {
+    display: block;
+}
+#newsletter-mail {
+    width: 100%;
+    margin-top: 5px;
+    display: block;
+    text-align: center;
+}
+#newsletter-mail:focus {
+    color: white;
+}
+#message {
+    margin-bottom: 40px;
 }
 hr {
     border: 0;
@@ -532,14 +586,14 @@ button {
     -ms-transition: all 100ms ease-in-out;
     transition: all 100ms ease-in-out;
 }
-nav span.current {
+nav ul li span.active {
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
     -o-transition: all 200ms ease-in-out;
     -ms-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
 }
-nav p {
+nav ul li p {
     -webkit-transition-property: opacity, margin;
     -webkit-transition-duration: 400ms, 400ms;
     -webkit-transition-timing-function: ease-in-out, ease-in-out;
@@ -555,6 +609,13 @@ nav p {
     transition-property: opacity, margin;
     transition-duration: 400ms, 400ms;
     transition-timing-function: ease-in-out, ease-in-out;
+}
+.transition-800 {
+    -webkit-transition: all 800ms ease-in-out;
+    -moz-transition: all 800ms ease-in-out;
+    -o-transition: all 800ms ease-in-out;
+    -ms-transition: all 800ms ease-in-out;
+    transition: all 800ms ease-in-out;
 }
 /* Responsive */
 
