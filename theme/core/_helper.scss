@@ -1,0 +1,40 @@
+.width-66 {
+    width: 66.666666667%;
+}
+
+.width-33 {
+    width: 33.3333333334%;
+}
+
+.with-50 {
+    width: 50%;
+}
+
+.width-25 {
+    width: 25%;
+}
+
+.width-full {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    display: block;
+}
+.round {
+    @include border-radius(50%);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Fixes */
+.inline-block-margin-fix {
+    font-size: 0px;
+}
+
+.clear-fix {
+    content: "";
+    display: table;
+    clear: both;
+}
