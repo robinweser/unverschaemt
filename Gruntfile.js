@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                     style: "compressed"
                 },
                 files: {
-                    'css/style.css': 'theme/unverschaemt.scss'
+                    'css/style.min.css': 'theme/unverschaemt.scss'
                 }
             }
         },
