@@ -8,4 +8,4 @@ var obscene = {
     setStyle: function(el, property, value) {
         el.style.setProperty(property, value);
     }
-}
+};

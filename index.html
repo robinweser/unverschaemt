@@ -7,7 +7,7 @@
     <meta property="og:url" content="http://unverschaemt.net/">
     <meta property="og:image" content="http://unverschaemt.net/res/logo.png">
     <meta property="og:description" content="Official webpage. Unverschaemt. is an independent app-, web- &amp; softwaredevelopment team.">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
     <meta name="title" content="Unverschämt.">
     <meta name="date" content="2015-05.01">
     <meta name="author" content="Robin Frischmann">
@@ -23,10 +23,9 @@
     <meta name="geo.position" content="49.008586;8.429271">
     <meta name="ICBM" content="49.008586, 8.429271">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="res/icon.png" type="image/x-icon">
     <link rel="icon" href="res/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
@@ -37,11 +36,12 @@
             <h2></h2>
             <p id="message">
             </p>
-            <button onclick="view.hidePopup()">Back</a>
+            <button onclick="view.hidePopup()">Back
+            </button>
         </div>
     </dialog>
 
-    <!-- NEWSLETTER -->
+
     <dialog id="newsletter-container" onclick="hideNewsletterForm()">
         <div id="newsletter-box" class="scale-out">
             Enter your mail
@@ -49,7 +49,8 @@
             <form action="javascript:controller.aboNewsletter()">
                 <input id="newsletter-mail" type="text" required="true" placeholder="max.mustermann@example.com">
                 <br>
-                <button onclick="controller.aboNewsletter()">Subscribe</a>
+                <button onclick="controller.aboNewsletter()">Subscribe
+                </button>
             </form>
         </div>
     </dialog>
@@ -57,7 +58,7 @@
 
 
     <nav>
-        <i onclick="view.scrollTo(0)" class="fa fa-chevron-up invisible"></i>
+        <i onclick="view.scrollTo(0)" class="fa fa-chevron-up invisible transition-800"></i>
         <ul>
             <li onclick="view.scrollTo('home')">
                 <span class="active"></span>
@@ -255,8 +256,8 @@
                 </span>
                 <article>
                     <h2>PfApp</h2>
-                    <span>PfApp is an organisation and planing tool for scouts.
-                        <br> It is based on Obscene UI and was especially built for <a href="http://bdp-rps.de/">BdP LV RPS</a>.</span>
+                    <span>PfApp is an organisation and <b>planning</b> tool for scouts.
+                        <br> It is based on <b>Obscene UI</b> and was especially built for <a href="http://bdp-rps.de/">BdP LV RPS</a>.</span>
                 </article>
                 <article>
                     <h2>Pin Fever</h2>
@@ -341,7 +342,7 @@
 
         <section id="impressum">
             <img src="res/rectangle.svg" style="width: 100%; -webkit-transform: rotate(180deg)">
-            </div>
+
             <h1>impressum.</h1>
             <div>
                 <b>Responsible according to § 10 paragraph 3 MDStV</b>
@@ -364,8 +365,8 @@
                 <br>Despite careful control we assume no liability for the content of external links.
                 <br>You yourself are solely responsible for the content of linked pages.
             </div>
-            <img src="res/rectangle.svg" style="width: 100%;">
-            </div>
+            <img src="res/rectangle.svg" style="width: 100%">
+
         </section>
 
         <section id="contact">
@@ -388,9 +389,7 @@
             </div>
         </section>
     </main>
-    <script type="text/javascript" src="js/obscene.js"></script>
-    <script type="text/javascript" src="js/view.js"></script>
-    <script type="text/javascript" src="js/controller.js"></script>
+    <script type="text/javascript" src="js/bin/main.min.js"></script>
 </body>
 
 </html>

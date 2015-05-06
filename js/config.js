@@ -1,3 +1,3 @@
 var config = {
     language: "en",
-}
+};

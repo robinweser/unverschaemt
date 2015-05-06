@@ -9,7 +9,13 @@ var view = {
         view.scrollTops.push(0);
         view.pages.forEach(function(item) {
             var page = obscene.getId(item);
-            view.scrollTops.push(page.offsetTop + (view.totalHeight / 2) - 60);
+            var add = 60;
+            if (item == "team" || item == "instagram") {
+                add -= 200;
+            } else if (item == "contact") {
+                add += 60;
+            }
+            view.scrollTops.push(page.offsetTop + (view.totalHeight / 2) - add);
         });
     },
     onPageLoad: function() {
@@ -19,9 +25,9 @@ var view = {
     },
     onPageScroll: function() {
         view.scrollTop = window.pageYOffset;
-        if (view.currentDot == 0) {
-            view.parallaxBackground();
-        }
+        //if (view.currentDot == 0) {
+        //    view.parallaxBackground();
+        //}
         for (var i = view.pages.length; i >= 0; --i) {
             if (view.scrollTop >= view.scrollTops[i]) {
                 view.setNavigationDot(i);
@@ -94,21 +100,21 @@ var view = {
         } else {
             index = view.pages.indexOf(index) + 1;
         }
-        document.body.classList.add("transition-800");
-        document.body.style.marginTop = (view.scrollTop - (view.scrollTops[index] + (index == 0 ? 0 : 300))) + "px";
-        setTimeout('document.body.classList.remove("transition-800")', 800);
-        setTimeout('document.body.style.marginTop = "0px"', 801);
-        setTimeout('document.body.scrollTop = ' + (view.scrollTops[index] + (index == 0 ? 0 : 300)), 805);
+        var main = obscene.getFirstTag("main");
+        main.classList.add("transition-800");
+        obscene.setStyle(main, "margin-top", (view.scrollTop - (view.scrollTops[index] + (index == 0 ? 0 : 200))) + "px");
+        setTimeout('obscene.getFirstTag("main").classList.remove("transition-800")', 800);
+        setTimeout('obscene.getFirstTag("main").style.marginTop = "0px"', 802);
+        setTimeout('document.body.scrollTop = ' + (view.scrollTops[index] + (index == 0 ? 0 : 200)), 801);
         view.onPageScroll();
-        view.parallaxBackground();
     },
     showPopup: function(success, failResponse) {
         popup.style.display = "inline-block";
         if (success) {
-            popup.getElementsByTagName("h2")[0].innerHTML = "Success";
+            popup.getElementsByTagName("h2")[0].innerHTML = translation.get('success');
             message.innerHTML = failResponse;
         } else {
-            popup.getElementsByTagName("h2")[0].innerHTML = "Failed";
+            popup.getElementsByTagName("h2")[0].innerHTML = translation.get('failure');
             message.innerHTML = failResponse;
         }
         setTimeout('document.getElementById("message-box").classList.remove("scale-out")', 30);

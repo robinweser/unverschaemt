@@ -5,7 +5,7 @@ var translation = {
     mailSent: {
         "de": "Sie haben eine Mail erhalten.<br>Bitte bestätigen Sie diese.",
         "en": "We have sent a mail to you.<br>Please verify your mail."
-    }
+    },
     alreadySubscribed: {
         "de": "Sie haben bereits<br>abonniert.",
         "en": "You already<br>have subscribed."
@@ -29,5 +29,13 @@ var translation = {
     enterRequest: {
         "de": "Bitte geben Sie<br> eine Anfrage an.",
         "en": "Please enter<br>a request."
+    },
+    success: {
+        "de": "Erfolg",
+        "en": "Success"
+    },
+    failure: {
+        "de": "Fehler",
+        "en": "Failure"
     }
-}
+};

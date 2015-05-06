@@ -73,7 +73,7 @@ var controller = {
         }
         request.send("mail=" + mail);
     }
-}
+};
 
 (function(i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
