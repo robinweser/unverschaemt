@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Unverschaemt.</title>
+    <meta property="og:title" content="Unverschaemt.">
+    <meta property="og:url" content="http://unverschaemt.net/">
+    <meta property="og:image" content="http://unverschaemt.net/res/logo.png">
+    <meta property="og:description" content="Official webpage. Unverschaemt. is an independent app-, web- &amp; softwaredevelopment team.">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta name="title" content="Unverschämt.">
+    <meta name="date" content="2015-05.01">
+    <meta name="author" content="Robin Frischmann">
+    <meta name="publisher" content="Unverschaemt.">
+    <meta name="copyright" content="Unverschaemt. &copy; 2015">
+    <meta name="keywords" content="unverschaemt, app, development, informatics, design, monster safari, app development, ios, apple, android, mobile, smartphone, instagram, iphone, hipster, startup, hashtag, karlsruhe">
+    <meta name="description" content="Official page. Unverschaemt. is an independent app-, web- &amp; softwaredevelopment team.">
+    <meta name="page-topic" content="Official page. Unverschaemt. is an independent app-, web- &amp; softwaredevelopment team.">
+    <meta name="audience" content="alle">
+    <meta name="language" content="english">
+    <meta name="geo.region" content="DE-BW">
+    <meta name="geo.placename" content="Karlsruhe">
+    <meta name="geo.position" content="49.008586;8.429271">
+    <meta name="ICBM" content="49.008586, 8.429271">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="res/icon.png" type="image/x-icon">
+    <link rel="icon" href="res/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+
+<body onscroll="view.onPageScroll()">
+    <dialog id="popup">
+        <div id="message-box" class="scale-out">
+            <h2></h2>
+            <p id="message">
+            </p>
+            <button onclick="view.hidePopup()">Back</a>
+        </div>
+    </dialog>
+
+    <!-- NEWSLETTER -->
+    <dialog id="newsletter-container" onclick="hideNewsletterForm()">
+        <div id="newsletter-box" class="scale-out">
+            Enter your mail
+            <br>
+            <form action="javascript:controller.aboNewsletter()">
+                <input id="newsletter-mail" type="text" required="true" placeholder="max.mustermann@example.com">
+                <br>
+                <button onclick="controller.aboNewsletter()">Subscribe</a>
+            </form>
+        </div>
+    </dialog>
+
+
+
+    <nav>
+        <i onclick="view.scrollTo(0)" class="fa fa-chevron-up invisible transition-800"></i>
+        <ul>
+            <li onclick="view.scrollTo('home')">
+                <span class="active"></span>
+                <p class="invisible">Home.</p>
+            </li>
+            <li onclick="view.scrollTo('about')">
+                <span></span>
+                <p class="invisible">About.</p>
+            </li>
+            <li class="light" onclick="view.scrollTo('team')">
+                <span></span>
+                <p class="invisible">Team.</p>
+            </li>
+            <li class="light" onclick="view.scrollTo('skill')">
+                <span></span>
+                <p class="invisible">Skills.</p>
+            </li>
+            <li onclick="view.scrollTo('products')">
+                <span></span>
+                <p class="invisible">Products.</p>
+            </li>
+            <li class="light" onclick="view.scrollTo('instagram')">
+                <span></span>
+                <p class="invisible">Instagram.</p>
+            </li>
+            <li onclick="view.scrollTo('socials')">
+                <span></span>
+                <p class="invisible">Social Networks.</p>
+            </li>
+            <li class="light" onclick="view.scrollTo('impressum')">
+                <span></span>
+                <p class="invisible">Impressum.</p>
+            </li>
+            <li onclick="view.scrollTo('contact')">
+                <span></span>
+                <p class="invisible">Contact.</p>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <article>
+            <h1>Unverschämt.</h1>
+            <h2>Built to inspire.</h2>
+        </article>
+        <button onclick="view.openNewsletterBox()" class="reverse">Get Newsletter</button>
+    </header>
+
+    <main>
+        <img src="res/rectangle.svg" style="width: 100%">
+        <section id="about">
+            <h1>About.</h1>
+            <div>
+                <p>
+                    <img src="res/logo.svg" class="round border">
+                    <br>
+                    <br>
+                    <b class="unverschaemt">unverschämt.</b> is an independent developer team. It was founded by five single-minded science students.
+                    <br> As a team we work closely together. We continuously share our knowledge to evolve.
+                    <br>
+                    <br>
+                    <button onclick="view.scrollTo('contact')">Feel free to contact us</button>
+                    <br>
+                </p>
+            </div>
+        </section>
+        <section id="team">
+            <img src="res/rectangle.svg" style="width: 100%; -webkit-transform: rotate(180deg)">
+            <h1>Team.</h1>
+            <br>
+            <div>
+                <figure>
+                    <img src="res/team/david.png">
+                    <h2>iOS Developer</h2>
+                    <span>David Ehlen</span>
+                </figure>
+                <figure>
+                    <img src="res/team/default_user.png">
+                    <h2>Software Architect</h2>
+                    <span>Dustin Hoffner</span>
+                </figure>
+                <figure>
+                    <a href="http://rofrischmann.de/">
+                        <img src="res/team/robin.png">
+                    </a>
+                    <h2>UI/UX Designer</h2>
+                    <span>Robin Frischmann</span>
+                </figure>
+                <br>
+                <figure>
+                    <img src="res/team/nils.png">
+                    <h2>Algorithm Engineer</h2>
+                    <span>Nils Hirsekorn</span>
+                </figure>
+                <figure>
+                    <img src="res/team/default_user.png">
+                    <h2>Server Developer</h2>
+                    <span>Simon Korz</span>
+                </figure>
+                <br>
+            </div>
+            <img src="res/rectangleGray.svg" style="width: 100%; -webkit-transform:  rotateY(180deg)">
+        </section>
+        <section id="skill">
+            <h1>Skills.</h1>
+            <div>
+                With everyone having his own speciality we complement one another quite well.
+                <br>We like to experiment and try out new exciting stuff.
+                <br>
+                <br>
+                <div class="skill-process">
+                    <i class="fa fa-sitemap"></i>
+                    <h2>Concept</h2>
+                    <span>
+                        We build software from scratch.
+                        <br> Meaning a well-thought-out concept is inevitable.
+                        <br> <b>UI-Mockups</b>, <b>Data Models</b> &amp; <b>Flow</b> and detailed <b>System Specs</b> is our way to start.
+                    </span>
+                </div>
+                <div class="skill-process">
+                    <i class="fa fa-terminal"></i>
+                    <h2>Development</h2>
+                    <span>
+                        We use <b>scrum</b> methods in combination with planning &amp; tracking tools to keep an <b>continuous development circle</b>.
+                        <br> With Jenkins, Git, Tests &amp; Code reviews we achieve high automation to guarantee <b>good quality</b>.
+                    </span>
+                </div>
+                <div class="skill-process">
+                    <i class="fa fa-database"></i>
+                    <h2>Technology</h2>
+                    <span>
+                        We use modern standards to achieve <b>high performance</b>.
+                        <br>Supporting all common <b>plattforms</b> and <b>devices</b>.
+                        <br>We believe in sharing knowledge therefore we <i class="fa fa-heart"></i> to contribute to <b>open source</b> projects.
+                        <br>
+                    </span>
+                </div>
+                <span class="splitter">
+                    <br>
+                    <br>
+                    <hr>
+                    <br>
+                </span>
+                <div class="skill-process">
+                    <i class="fa fa-globe"></i>
+                    <h2>Web</h2>
+                    <span>
+                        <b>React</b>, Node, JavaScript, HTML5, CSS3, Mocha, MongoDB, Angular, <b>Sass</b>, Grunt, <b>Responsive Design</b>, Material Design &amp; more
+                    </span>
+                </div>
+                <div class="skill-process">
+                    <i class="fa fa-mobile"></i>
+                    <h2>Native</h2>
+                    <span>
+                        <b>Swift</b>, <b>Objective-C</b>, C/C++, <b>Java</b>, <b>Arduino</b>, Cocoa, Android SDK, Google Services, <b>Phonegap</b>, Visual Basic, C#
+                    </span>
+                </div>
+                <div class="skill-process">
+                    <i class="fa fa-puzzle-piece"></i>
+                    <h2>Tools</h2>
+                    <span>
+                        <b>JIRA</b>, <b>Confluence</b>, Jenkins, Git, <b>Photoshop</b>, Illustrator, InDesign, XCode, HipChat, Android Studio, Eagle, <b>Coffee</b> <i class="fa fa-coffee"></i>
+                    </span>
+                </div>
+                <br>
+                <br>
+            </div>
+            <img src="res/rectangle.svg" style="width: 100%; -webkit-transform:  rotateY(180deg)">
+        </section>
+        <section id="products">
+            <h1>Products.</h1>
+            <div>
+                <article>
+                    <h2><a href="/stockparty/">Stock Party</a></h2>
+                    <span>Stock Party is an application that takes your party to the next level.
+                        <br> Drinks are calculated by supply and demand.
+                    </span>
+                </article>
+                <article>
+                    <h2>Monster Safari</h2>
+                    <span>Prepare for a new, epic journey.
+                        <br> Dominate your enemies and friends.</span>
+                </article>
+                <article>
+                    <h2>Obscene UI</h2>
+                    <span>
+                        Obscene UI is a responsive, mobile-friendly UI-Template to build stable and beautiful app themes.</span>
+                    <br>
+                </article>
+                <span class="splitter">
+                    <br>
+                    <br>
+                    <hr>
+                    <br>
+                </span>
+                <article>
+                    <h2>PfApp</h2>
+                    <span>PfApp is an organisation and <b>planning</b> tool for scouts.
+                        <br> It is based on <b>Obscene UI</b> and was especially built for <a href="http://bdp-rps.de/">BdP LV RPS</a>.</span>
+                </article>
+                <article>
+                    <h2>Pin Fever</h2>
+                    <span>Pin Fever is a turn based game to challenge your friends with geographical skills.</span>
+                </article>
+                <article>
+                    <h2><a href="http://unverschaemt.github.io/perfectfont/">Perfect Font</a></h2>
+                    <span>
+                        Perfect Font is a simple tool which helps you to test hundreds of fonts in realtime within your live previewed web-project.</span>
+                </article>
+            </div>
+        </section>
+
+        <section id="instagram">
+            <img src="res/rectangle.svg" style="width: 100%; -webkit-transform: rotate(180deg)">
+            <h1>Instagram.</h1>
+            <div>
+                Please check our instagram page to see all incredible shots.
+                <br>You will find out a lot about our daily life as well as how we are doing behind the scene.
+                <br>
+                <br>
+                <br>
+                <button class="light" onclick="view.openInstagram()">View on Instagram</button>
+            </div>
+            <img src="res/rectangle.svg" style="width: 100%">
+        </section>
+
+        <section id="socials">
+            <h1>Social networks.</h1>
+            <div>
+                We recommend to connect with us via social networks to get new information immediately.
+                <br>Currently we are represent on Facebook, Twitter and Instagram.
+                <br>
+                <br>
+                <div class="social-network">
+                    <a href="https://www.facebook.com/unverschamt">
+                        <img src="res/icon/fb.svg">
+                        <h2>Facebook</h2>
+                    </a>
+                    <span>
+                        <br>You will find all kind of new information immediately there.
+                    </span>
+                </div>
+                <div class="social-network">
+                    <a href="https://www.instagram.com/unverschaemt_official">
+                        <img src="res/icon/instagram.svg">
+                        <h2>Instagram</h2>
+                    </a>
+                    <span>
+                        <br>We frequently post some daily shots.
+                    </span>
+                </div>
+                <div class="social-network">
+                    <a href="http://blog.unverschaemt.net">
+                        <img src="res/icon/tumblr.svg">
+                        <h2>Blog</h2>
+                    </a>
+                    <span>
+                        <br>We blog about product information and our development process.
+                    </span>
+                </div>
+                <div class="social-networks-follow">
+                    <a href="https://www.facebook.com/unverschamt">
+                    Like us on Facebook
+                   <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </div>
+                <div class="social-networks-follow">
+                    <a href="https://www.instagram.com/unverschaemt_official">
+                    Follow us on Instagram
+                    <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </div>
+                <div class="social-networks-follow">
+                    <a href="http://blog.unverschaemt.net">
+                    Follow our blog
+                    <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="impressum">
+            <img src="res/rectangle.svg" style="width: 100%; -webkit-transform: rotate(180deg)">
+            </div>
+            <h1>impressum.</h1>
+            <div>
+                <b>Responsible according to § 10 paragraph 3 MDStV</b>
+                <br>
+                <b class="unverschaemt">unverschämt.</b>
+                <br>
+                <br>David Ehlen
+                <br>Dustin Hoffner
+                <br>Robin Frischmann
+                <br>Nils Hirsekorn
+                <br>Simon Korz
+                <br>
+                <br>
+                <br>76131 Karlsruhe
+                <br>
+                <b><a href="mailto:support@unverschaemt.net">support@unverschaemt.net</a></b>
+                <br>
+                <br>
+                <b>Notice of Liability</b>
+                <br>Despite careful control we assume no liability for the content of external links.
+                <br>You yourself are solely responsible for the content of linked pages.
+            </div>
+            <img src="res/rectangle.svg" style="width: 100%;">
+            </div>
+        </section>
+
+        <section id="contact">
+            <h1>contact.</h1>
+            <div class="inner-text">
+                <div id="contact-formular">
+                    <br>
+                    <label>E-Mail</label>
+                    <input id="contact-mail" type="text" placeholder="max.mustermann@example.com">
+                    <br>
+                    <label>Subject <i>(optional)</i>
+                    </label>
+                    <input id="contact-subject" type="text">
+                    <br>
+                    <label>Request</label>
+                    <textarea id="contact-request" type="text" placeholder="Enter your request here ..."></textarea>
+                    <button onclick="controller.sendContactRequest()">Send</button>
+                    <br>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script type="text/javascript" src="js/translation.js"></script>
+    <script type="text/javascript" src="js/obscene.js"></script>
+    <script type="text/javascript" src="js/view.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>
+</body>
+
+</html>
