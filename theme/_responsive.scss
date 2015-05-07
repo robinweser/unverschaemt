@@ -1,0 +1,166 @@
+@media (max-width: 1105px) {
+    body {
+        background-size: auto 160%;
+    }
+    .social-network span,
+    .social-network b,
+    .social-networks-follow,
+    section#products span {
+        display: none;
+    }
+    .splitter {
+        display: block;
+    }
+    .social-network {
+        width: auto;
+    }
+    section h1 {
+        font-size: 50px;
+    }
+}
+@media (max-width: 800px) {
+    section div {
+        padding: 5% 8%;
+    }
+    nav {
+        display: none;
+    }
+    #scroll-arrow {
+        display: none;
+    }
+    section#team figure {
+        width: 50%;
+        margin: 0 -2px;
+        font-size: 22px;
+        padding: 0;
+        margin-bottom: 40px;
+        height: auto;
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+    }
+    section#products article {
+        width: 48%;
+        margin-bottom: 2px;
+    }
+    .splitter {
+        display: none;
+    }
+    header h1 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+    section#about img {
+        width: 150px;
+        height: 150px;
+    }
+    header article {
+        padding: 15% 6% 6%;
+    }
+}
+@media (max-width: 500px) {
+    section h1 {
+        font-size: 35px;
+        padding: 5% 10%;
+    }
+    section#team figure {
+        width: 100%;
+        margin-bottom: 14px;
+        height: auto;
+        text-align: left;
+        font-size: 20px;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+    }
+    section#products h2 {
+        font-size: 25px;
+        line-height: 22px;
+    }
+    section#products article {
+        width: 80%;
+        padding: 5px 5px 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid lightgray;
+    }
+    section#products article:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    section#products article:last-child {
+        width: 80%;
+        padding: 5px 5px 10px;
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+    .social-network img {
+        height: 72px;
+        width: 72px;
+    }
+    section#team figure img {
+        width: 33%;
+        float: left;
+        margin-right: 15px;
+    }
+    header h1 {
+        font-size: 45px;
+        line-height: 45px;
+    }
+    header h2 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    header article {
+        padding: 12% 6%;
+    }
+    section div {
+        padding: 10%;
+        font-size: 20px;
+    }
+    section#contact div.inner-text {
+        padding: 10px 10px 40px;
+    }
+}
+@media (max-width: 350px) {
+    section div {
+        padding: 8% 10%;
+        font-size: 20px;
+    }
+    section#team figure img {
+        display: inline-block;
+        width: 27%;
+        vertical-align: -3%;
+        margin-right: 8px;
+        margin-bottom: 0;
+    }
+    section#team figure span {
+        display: none;
+    }
+    .social-network {
+        display: inline-block;
+        width: 40%;
+        padding: 0;
+    }
+    button {
+        font-size: 21px;
+    }
+    section h1 {
+        font-size: 30px;
+        padding: 3% 10%;
+    }
+    #team figure {
+        width: 100%;
+        margin: 0 -2px;
+        padding: 0;
+        margin-bottom: 40px;
+        height: auto;
+        text-align: center;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+    }
+    #team figure img {
+        width: 60%;
+        float: none;
+    }
+}

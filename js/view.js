@@ -1,9 +1,9 @@
 var view = {
     totalHeight: undefined,
-    scrollTop: null,
     scrollTops: [],
     currentDot: undefined,
     pages: ["about", "team", "skill", "products", "instagram", "socials", "impressum", "contact"],
+    scrolling: false,
     init: function() {
         view.totalHeight = obscene.getFirstTag("html").clientHeight;
         view.scrollTops.push(0);
@@ -18,18 +18,20 @@ var view = {
             view.scrollTops.push(page.offsetTop + (view.totalHeight / 2) - add);
         });
     },
+
+    openInstagram: function() {
+        window.location.href = "http://instagram.com/unverschaemt_official";
+    },
     onPageLoad: function() {
         view.doLayout();
-        view.scrollTop = 0;
         view.currentDot = 0;
     },
     onPageScroll: function() {
-        view.scrollTop = window.pageYOffset;
-        //if (view.currentDot == 0) {
-        //    view.parallaxBackground();
-        //}
+        /*if (view.currentDot == 0) {
+            view.parallaxBackground();
+        }*/
         for (var i = view.pages.length; i >= 0; --i) {
-            if (view.scrollTop >= view.scrollTops[i]) {
+            if (window.pageYOffset >= view.scrollTops[i]) {
                 view.setNavigationDot(i);
                 return;
             }
@@ -70,13 +72,13 @@ var view = {
             newsletterButton.innerHTML = "Sent"
         }, 800);
     },
-    showNewsletterForm: function() {
+    showNewsletterBox: function() {
         document.getElementById('newsletter-container').style.display = "inline-block";
         document.getElementById('newsletter-mail').value = "";
         setTimeout('document.getElementById("newsletter-box").classList.remove("scale-out")', 30);
         document.getElementById('subscribe-newsletter').focus();
     },
-    hideNewsletterForm: function(force) {
+    hideNewsletterBox: function(force) {
         var targetItem = event.target.toString();
         if (targetItem.indexOf("Dialog") != -1 || targetItem.indexOf("Unknown") != -1 || force == true) {
             document.getElementById('newsletter-box').classList.add("scale-out");
@@ -97,16 +99,17 @@ var view = {
     scrollTo: function(index) {
         if (index == "home") {
             index = 0;
+            //view.parallaxBackground(true);
         } else {
             index = view.pages.indexOf(index) + 1;
         }
         var main = obscene.getFirstTag("main");
         main.classList.add("transition-800");
-        obscene.setStyle(main, "margin-top", (view.scrollTop - (view.scrollTops[index] + (index == 0 ? 0 : 200))) + "px");
+        obscene.setStyle(main, "margin-top", (window.pageYOffset - (view.scrollTops[index] + (index == 0 ? 0 : 200))) + "px");
         setTimeout('obscene.getFirstTag("main").classList.remove("transition-800")', 800);
-        setTimeout('obscene.getFirstTag("main").style.marginTop = "0px"', 802);
-        setTimeout('document.body.scrollTop = ' + (view.scrollTops[index] + (index == 0 ? 0 : 200)), 801);
-        view.onPageScroll();
+        setTimeout('obscene.getFirstTag("main").style.marginTop = "0px"', 805);
+        setTimeout('document.body.scrollTop = ' + (view.scrollTops[index] + (index == 0 ? 0 : 200)), 810);
+        setTimeout('view.onPageScroll()', 820);
     },
     showPopup: function(success, failResponse) {
         popup.style.display = "inline-block";
@@ -123,10 +126,10 @@ var view = {
         document.getElementById('message-box').classList.add("scale-out");
         setTimeout('popup.style.display = "none"', 420);
     },
-    parallaxBackground: function() {
-        obscene.setStyle(document.body, "background-size", Math.max(100, 120 + (view.scrollTop / 8)) + "% auto");
+    parallaxBackground: function(hack) {
+        obscene.setStyle(document.body, "background-size", Math.max(100, 120 + (hack ? 0 : (window.pageYOffset / 8))) + "% auto");
     }
-}
+};
 
 window.onload = view.onPageLoad;
 window.onresize = view.doLayout;

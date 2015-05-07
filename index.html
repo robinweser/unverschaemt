@@ -30,9 +30,9 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
-<body onscroll="view.onPageScroll()">
+<body onscroll="view.onPageScroll()" class="no-scrollbar">
     <dialog id="popup">
-        <div id="message-box" class="scale-out">
+        <div id="message-box" class="scale-out round">
             <h2></h2>
             <p id="message">
             </p>
@@ -42,16 +42,13 @@
     </dialog>
 
 
-    <dialog id="newsletter-container" onclick="hideNewsletterForm()">
+    <dialog id="newsletter-container" onclick="view.hideNewsletterBox()">
         <div id="newsletter-box" class="scale-out">
             Enter your mail
             <br>
-            <form action="javascript:controller.aboNewsletter()">
-                <input id="newsletter-mail" type="text" required="true" placeholder="max.mustermann@example.com">
-                <br>
-                <button onclick="controller.aboNewsletter()">Subscribe
-                </button>
-            </form>
+            <input id="newsletter-mail" type="text" placeholder="max.mustermann@example.com" onsubmit="controller.aboNewsletter()">
+            <br>
+            <button onclick="controller.aboNewsletter()">Subscribe</button>
         </div>
     </dialog>
 
@@ -104,7 +101,7 @@
             <h1>Unverschämt.</h1>
             <h2>Built to inspire.</h2>
         </article>
-        <button onclick="view.openNewsletterBox()" class="reverse">Get Newsletter</button>
+        <button onclick="view.showNewsletterBox()" class="reverse">Get Newsletter</button>
     </header>
 
     <main>
@@ -155,7 +152,7 @@
                 </figure>
                 <figure>
                     <img src="res/team/default_user.png">
-                    <h2>Server Developer</h2>
+                    <h2>Backend Developer</h2>
                     <span>Simon Korz</span>
                 </figure>
                 <br>
@@ -233,19 +230,19 @@
             <div>
                 <article>
                     <h2><a href="/stockparty/">Stock Party</a></h2>
-                    <span>Stock Party is an application that takes your party to the next level.
-                        <br> Drinks are calculated by supply and demand.
+                    <span>Stock Party is an application that takes your <b>party</b> to the next level.
+                        <br> Drinks are calculated by <b>supply &amp; demand</b>.
                     </span>
                 </article>
                 <article>
                     <h2>Monster Safari</h2>
-                    <span>Prepare for a new, epic journey.
-                        <br> Dominate your enemies and friends.</span>
+                    <span>Prepare for a new, <b>epic journey</b>.
+                        <br>Dominate your enemies and friends.</span>
                 </article>
                 <article>
                     <h2>Obscene UI</h2>
                     <span>
-                        Obscene UI is a responsive, mobile-friendly UI-Template to build stable and beautiful app themes.</span>
+                        Obscene UI is a <b>responsive</b>, mobile-friendly <b>UI-Template</b> to build stable and beautiful app themes.</span>
                     <br>
                 </article>
                 <span class="splitter">
@@ -261,12 +258,12 @@
                 </article>
                 <article>
                     <h2>Pin Fever</h2>
-                    <span>Pin Fever is a turn based game to challenge your friends with geographical skills.</span>
+                    <span>Pin Fever is a turn based <b>game</b> to <b>challenge</b> your friends with <b>geographical skills</b>.</span>
                 </article>
                 <article>
                     <h2><a href="http://unverschaemt.github.io/perfectfont/">Perfect Font</a></h2>
                     <span>
-                        Perfect Font is a simple tool which helps you to test hundreds of fonts in realtime within your live previewed web-project.</span>
+                        Perfect Font is a simple tool which helps you to test hundreds of <b>fonts</b> in realtime within your <b>live previewed</b> web-project.</span>
                 </article>
             </div>
         </section>
@@ -364,6 +361,8 @@
                 <b>Notice of Liability</b>
                 <br>Despite careful control we assume no liability for the content of external links.
                 <br>You yourself are solely responsible for the content of linked pages.
+                <br>
+                <br>Copyright 2015 &copy; Unverschämt.
             </div>
             <img src="res/rectangle.svg" style="width: 100%">
 

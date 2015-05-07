@@ -1,0 +1,62 @@
+button {
+    -webkit-transition: all 100ms ease-in-out;
+    -moz-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    -ms-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+nav ul li span.active,
+.social-network img {
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+nav ul li p {
+    -webkit-transition-property: opacity, margin;
+    -webkit-transition-duration: 400ms, 400ms;
+    -webkit-transition-timing-function: ease-in-out, ease-in-out;
+    -moz-transition-property: opacity, margin;
+    -moz-transition-duration: 400ms, 400ms;
+    -moz-transition-timing-function: ease-in-out, ease-in-out;
+    -ms-transition-property: opacity, margin;
+    -ms-transition-duration: 400ms, 400ms;
+    -ms-transition-timing-function: ease-in-out, ease-in-out;
+    -o-transition-property: opacity, margin;
+    -o-transition-duration: 400ms, 400ms;
+    -o-transition-timing-function: ease-in-out, ease-in-out;
+    transition-property: opacity, margin;
+    transition-duration: 400ms, 400ms;
+    transition-timing-function: ease-in-out, ease-in-out;
+}
+.transition-800 {
+    -webkit-transition: all 800ms ease-in-out;
+    -moz-transition: all 800ms ease-in-out;
+    -o-transition: all 800ms ease-in-out;
+    -ms-transition: all 800ms ease-in-out;
+    transition: all 800ms ease-in-out;
+}
+.social-network img:hover {
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    transform: rotate(60deg);
+}
+#message-box,
+#newsletter-box,
+#newsletter-mail {
+    -webkit-transition: all 400ms ease-in-out;
+    -moz-transition: all 400ms ease-in-out;
+    -o-transition: all 400ms ease-in-out;
+    -ms-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+}
+.scale-out {
+    -webkit-transform: scale(0.0);
+    -moz-transform: scale(0.0);
+    -o-transform: scale(0.0);
+    -ms-transform: scale(0.0);
+    transform: scale(0.0);
+}
