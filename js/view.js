@@ -133,7 +133,3 @@ var view = {
 
 window.onload = view.onPageLoad;
 window.onresize = view.doLayout;
-
-window.onbeforeunload = function(e) {
-    window.scrollTo(0, 0);
-};
