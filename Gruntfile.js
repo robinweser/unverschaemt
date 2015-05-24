@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     grunt.initConfig({
         pkg: '<json:package.json>',
         htmlmin: {
@@ -34,10 +34,20 @@ module.exports = function(grunt) {
                 dest: 'js/bin/main.min.js'
             }
         },
+        watch: {
+            theme: {
+                files: '**/*.scss',
+                tasks: ['default'],
+                options: {
+                    debounceDelay: 500,
+                },
+            },
+        }
     });
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.registerTask('default', ['sass', 'htmlmin', 'concat', 'uglify']);
 };

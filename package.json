@@ -1,13 +1,14 @@
 {
-    "name": "unverschaemt",
-    "version": "0.1.0",
-    "description": "webpage generator for unverschaemt.net",
-    "repository": "https://github.com/unverschaemt/unverschaemt-webpage",
-    "devDependencies": {
-        "grunt": "~0.4.5",
-        "grunt-contrib-sass": "~0.9.0",
-        "grunt-contrib-htmlmin": "0.4.0",
-        "grunt-contrib-concat": "^0.4.0",
-        "grunt-contrib-uglify": "0.6.0"
-    }
+  "name": "unverschaemt",
+  "version": "0.1.0",
+  "description": "webpage generator for unverschaemt.net",
+  "repository": "https://github.com/unverschaemt/unverschaemt-webpage",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-htmlmin": "0.4.0",
+    "grunt-contrib-sass": "~0.9.0",
+    "grunt-contrib-uglify": "0.6.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
 }
