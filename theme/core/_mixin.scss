@@ -1,19 +1,18 @@
+@mixin vendor($var, $value) {
+    -webkit-#{$var}: $value;
+    -khtml-#{$var}: $value;
+    -moz-#{$var}: $value;
+    -ms-#{$var}: $value;
+    -o-#{$var}: $value;
+    $var: $value;
+}
+
 @mixin border-radius($radius) {
-    -webkit-border-radius: $radius;
-    -khtml-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    -o-border-radius: $radius;
-    border-radius: $radius;
+    @include vendor(border-radius, $radius);
 }
 
 @mixin transition($args...) {
-    -webkit-transition: $args;
-    -khtml-transition: $args;
-    -moz-transition: $args;
-    -ms-transition: $args;
-    -o-transition: $args;
-    transition: $args;
+    @include vendor(transition, $args);
 }
 
 @mixin opacity($opacity) {
@@ -22,22 +21,28 @@
     filter: alpha(opacity = $opacity-ie);
 }
 
-@mixin box-sizing($boxmodel) {
-    -webkit-box-sizing: $boxmodel;
-    -moz-box-sizing: $boxmodel;
-    box-sizing: $boxmodel;
+@mixin box-sizing($box-sizing) {
+    @include vendor(box-sizing, $box-sizing);
 }
 
 @mixin appearance($appearance) {
-    -webkit-appearance: $appearance;
-    -moz-appearance: $appearance;
-    appearance: $appearance;
+    @include vendor(appearance, $appearance);
 }
 
-@mixin box-sizing($box-sizing) {
-    -webkit-box-sizing: $box-sizing;
-    -moz-box-sizing: $box-sizing;
-    box-sizing: $box-sizing;
+@mixin text-size-adjust($value) {
+    @include vendor(text-size-adjust, $value);
+}
+
+@mixin touch-callout($value) {
+    @include vendor(touch-callout, $value);
+}
+
+@mixin tap-highlight-color($value) {
+    @include vendor(tap-highlight-color, $value);
+}
+
+@mixin overflow-scrolling($value) {
+    @include vendor(overflow-scrolling, $value);
 }
 
 @mixin keyframes($animation-name) {
