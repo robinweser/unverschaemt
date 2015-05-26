@@ -15,10 +15,22 @@
     @include vendor(transition, $args);
 }
 
+@mixin transform($args...) {
+    @include vendor(transform, $args);
+}
+
 @mixin opacity($opacity) {
     opacity: $opacity;
     $opacity-ie: $opacity * 100;
     filter: alpha(opacity = $opacity-ie);
+}
+
+@mixin animation-duration($duration) {
+    @include vendor(animation-duration, $duration);
+}
+
+@mixin animation-delay($delay) {
+    @include vendor(animation-delay, $delay);
 }
 
 @mixin box-sizing($box-sizing) {
