@@ -23,38 +23,7 @@ body {
     font-size: 0;
 }
 
-input,
-textarea {
-    padding: 13px 10px 13px 14px;
-    font-size: 20px;
-    border-radius: 15px;
-    border-style: solid;
-    position: relative;
-    display: inline-block;
-    border-color: rgb(211, 211, 211);
-    vertical-align: top;
-    border-width: 1px;
-    margin-right: -8px;
-}
-
-textarea {
-    outline-width: 0;
-    outline: none;
-}
-
-input:hover,
-textarea:hover {
-    border-color: rgba(128, 128, 128, 0.88);
-    background-color: rgba(224, 224, 224, 0.2);
-    outline: none;
-}
-
-input:focus,
-textarea:focus {
-    border-color: rgba(128, 128, 128, 0.66);
-    background-color: rgba(224, 224, 224, 0.1);
-    outline: none;
-}
+@import "el/input";
 
 b {
     font-weight: 400;
@@ -73,119 +42,13 @@ header {
 }
 
 main {
-    top: 74%;
+    top: 100%;
     position: absolute;
     width: 100%;
     font-size: 0;
 }
 
-section {
-    color: rgb(80, 80, 80);
-    background: white;
-    div {
-        padding: 2.5% 5% 4%;
-        font-size: 22px;
-        max-width: 1300px;
-        width: 100%;
-        margin: 0 auto;
-    }
-    p {
-        padding: 2%;
-    }
-}
-
-section#team h1,
-section#skill h1,
-section#instagram h1,
-section#impressum h1,
-section#team h2 {
-    color: rgb(240, 240, 240);
-}
-
-section#team b,
-section#skill b,
-section#instagram b,
-section#impressum b {
-    color: rgb(230, 230, 230);
-}
-
-section#team,
-section#skill,
-section#instagram,
-section#impressum {
-    color: rgb(220, 220, 220);
-    background-size: cover !important;
-    background-attachment: fixed !important;
-}
-
-section#team {
-    background: rgb(75, 75, 75);
-    font-size: 0;
-}
-
-section#impressum {
-    background: url("../res/background/member.jpg") center;
-    font-size: 0;
-}
-
-section#skill {
-    background: #737373;
-    font-size: 0;
-}
-
-section#skill div,
-section#about div,
-section#socials div,
-section#team h2,
-section#instagram div {
-    font-size: 25px;
-}
-
-section#instagram {
-    background: url("../res/background/instagram.jpg") center;
-    font-size: 0;
-}
-
-section#team figure {
-    width: 32%;
-    margin: 0;
-    display: inline-block;
-    padding: 2%;
-    max-width: 300px;
-    vertical-align: top;
-    font-size: 25px;
-}
-
-section#team figure span {
-    font-size: 20px;
-    line-height: 20px;
-    font-weight: 300;
-    vertical-align: 5px;
-}
-
-section#team figure img {
-    width: 70%;
-    height: auto;
-    margin-bottom: 4px;
-    margin-right: 8px;
-    border: 1px solid rgb(120, 120, 120);
-    background-color: white;
-    vertical-align: middle;
-}
-
-section h1 {
-    color: #646464;
-    font-size: 60px;
-}
-
-section h2,
-section h2 a {
-    color: rgb(60, 60, 60);
-    font-size: 30px;
-}
-
-section h2 a:hover,
-section#team figure a:hover {
+a:hover {
     cursor: pointer;
     border: none;
 }
@@ -210,139 +73,11 @@ h2 a {
     font-weight: 200;
 }
 
-nav {
-    display: block;
-    z-index: 50;
-    position: fixed;
-    width: 28px;
-    height: 100%;
-    font-size: 0;
-    padding-left: 11px;
-    text-align: left;
-}
-
-nav ul {
-    margin-top: 200px;
-}
-
-nav ul li {
-    width: 200px;
-    padding: 3px;
-    height: 19px;
-    position: relative;
-    display: block;
-}
-
-nav ul li span {
-    width: 8px;
-    height: 8px;
-    display: inline-block;
-    background-color: rgb(165, 165, 165);
-}
-
-nav ul li span:hover {
-    cursor: pointer;
-}
-
-nav ul li p {
-    display: inline-block;
-    padding-left: 10px;
-    font-size: 15px;
-    color: #898989;
-    font-weight: 200;
-    z-index: 500;
-}
-
-nav ul li span:hover ~ p {
-    opacity: 1.0;
-    color: gray;
-}
-
-nav ul li span.active {
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgb(50, 50, 50);
-    margin: 2px -2px -2px;
-    width: 12px;
-    height: 12px;
-}
-
-nav i {
-    padding: 8px 9px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 35px !important;
-    z-index: 120;
-    color: rgb(165, 165, 165);
-}
-
-nav i:hover {
-    color: rgb(120, 120, 120);
-}
-
-nav i:hover {
-    color: #393939;
-}
-
-nav ul li.light p {
-    color: rgb(180, 180, 180) !important;
-}
-
-nav ul li span,
-.round,
-section#team figure img,
-.social-network img {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-}
-
-.invisible {
-    opacity: 0.0;
-}
-
-button {
-    background: transparent;
-    padding: 10px 16px 12px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
-    border-radius: 50px;
-    text-decoration: none;
-    border: 1px solid rgb(210, 210, 210);
-    font-size: 20px;
-}
-
-button:hover {
-    cursor: pointer;
-    border-color: rgb(100, 100, 100);
-}
-
-button.light {
-    border-color: rgb(220, 220, 220);
-    color: rgb(220, 220, 220);
-}
-
-button.light:hover {
-    border-color: rgb(150, 150, 150);
-}
-
-button.reverse {
-    border-color: rgb(100, 100, 100);
-}
-
-button.reverse:hover {
-    border-color: rgb(180, 180, 180);
-    color: rgb(100, 100, 100);
-}
-
-button:hover {
-    margin-top: 1px;
-    margin-bottom: -1px;
-}
+@import "el/section";
+@import "el/figure";
+@import "el/nav";
+@import "el/button";
+@import "el/popup";
 
 .border {
     border: 1px solid rgb(200, 200, 200);
@@ -353,134 +88,10 @@ button:hover {
     font-size: 24px;
 }
 
-section#skill .splitter hr {
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-section#about img {
-    width: 200px;
-    height: 200px;
-}
-
-#contact-formular {
-    width: 100%;
-    padding: 0 5%;
-    box-sizing: border-box;
-}
-
-#contact input,
-#contact textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    display: block;
-}
-
-#contact textarea {
-    height: 150px;
-    max-width: 100%;
-    margin-bottom: 35px;
-}
-
-#contact label {
-    width: 100%;
-    display: block;
-    text-align: left;
-    padding-left: 5px;
-}
-
-#contact label i {
-    color: rgb(170, 170, 170);
-}
-
-#products article {
-    width: 30%;
-    display: inline-block;
-    vertical-align: top;
-    font-size: 18px;
-    padding: 2% 3.5%;
-}
-
-#products article h2 {
-    cursor: pointer;
-    display: block;
-    margin-bottom: 5px;
-}
-
-/* POPUP */
-
-#popup,
-#newsletter-container {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    background-color: rgba(40, 40, 40, 0.95);
-    display: none;
-}
-
-#newsletter-container {
-    z-index: 99;
-}
-
-#message-box {
-    left: 50%;
-    top: 40%;
-    margin: -150px 0 0 -150px;
-    height: 300px;
-    width: 300px;
-    font-size: 22px;
-    padding-top: 60px;
-    text-align: center;
-    background-color: white;
-    position: fixed;
-}
-
-#message-box h2 {
-    font-size: 38px;
-}
-
-#newsletter-box {
-    width: 80%;
-    top: 50%;
-    left: 10%;
-    font-size: 22px;
-    margin: -150px 0;
-    padding: 20px 20px 40px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-    border-radius: 30px;
-    position: fixed;
-    text-align: center;
-    color: rgb(200, 200, 200) !important;
-}
-
-#newsletter-box form {
-    display: block;
-}
-
-#newsletter-mail {
-    width: 100%;
-    margin-top: 5px;
-    display: block;
-    text-align: center;
-}
-
-#newsletter-mail:focus {
-    color: white;
-}
-
-#message {
-    margin-bottom: 40px;
-}
-
 hr {
     border: 0;
     border-bottom: 1px solid rgba(200, 200, 200, 0.8);
-    margin: 10px 15%;
+    margin: 30px 45%;
 }
 
 a {
@@ -492,85 +103,12 @@ a:hover {
     border-bottom: 2px solid lightgray;
 }
 
-.social-network,
-.skill-process {
-    width: 30%;
-    display: inline-block;
-    padding: 2% 3.5%;
-    vertical-align: top;
-    text-align: center;
-}
-
-.social-network img {
-    height: 80px;
-    width: 80px;
-    display: block;
-    margin: 0 auto 4px;
-}
-
-.social-network img:hover {
-    cursor: pointer;
-}
-
-.social-network span,
-.skill-process span {
-    display: block;
-    line-height: 20px;
-    padding-top: 5px;
-    font-size: 18px;
-}
-
-.social-networks-follow {
-    width: 30%;
-    display: inline-block;
-    padding: 0 3%;
-    font-size: 20px !important;
-    line-height: 20px;
-    vertical-align: top;
-}
-
-.social-networks-follow i {
-    vertical-align: 1px;
-    font-size: 14px;
-}
-
-.social-networks-follow a {
-    text-decoration: none;
-    color: rgb(50, 50, 50);
-}
-
-.social-networks-follow a:hover {
-    color: rgb(100, 100, 100);
-    text-decoration: none;
-}
-
-.skill-process {
-    color: rgb(220, 220, 220);
-}
-
-.skill-process i {
-    display: block;
-    font-size: 40px;
-    color: white;
-}
-
-.skill-process span i {
-    font-size: 12px;
-    vertical-align: 1px;
-    display: inline;
-}
-
-.skill-process h2,
-.skill-process h2 a {
-    color: white;
-    display: block;
-    margin-bottom: 14px;
-}
-
-section#impressum a {
-    color: rgb(230, 230, 230);
-}
-
-section#impressum .unverschaemt {
-    font-size: 30px;
+.rectangle {
+    width: 100%;
+    &.rotateY {
+        @include transform(rotateY(180deg));
+    }
+    &.rotate {
+        @include transform(rotate(180deg));
+    }
 }
