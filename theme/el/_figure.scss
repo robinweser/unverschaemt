@@ -1,0 +1,104 @@
+figure {
+    @extend %width-30;
+    margin: 0;
+    padding: 2% 3.5%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 25px;
+    span {
+        line-height: 20px;
+        font-weight: 300;
+        vertical-align: 5px;
+        padding-top: 5px;
+        font-size: 18px;
+    }
+    img {
+        @extend %round;
+        height: auto;
+        vertical-align: middle;
+    }
+    h2, a {
+        color: white;
+    }
+}
+
+#team {
+    figure {
+        span {
+            font-size: 20px;
+        }
+        img {
+            display: none;
+            @extend %width-20;
+            @include border-radius(0);
+            margin-bottom: 4px;
+            margin-right: 8px;
+        }
+        a:hover {
+            border: none;
+        }
+    }
+}
+
+#skill {
+    figure {
+        color: rgb(220, 220, 220);
+        i {
+            font-size: 40px;
+        }
+        h2 {
+            margin-bottom: 14px;
+        }
+        span {
+            i {
+                font-size: 12px;
+                vertical-align: 1px;
+                display: inline;
+            }
+        }
+    }
+}
+
+#products {
+    figure {
+        font-size: 18px;
+        h2 {
+            cursor: pointer;
+            display: block;
+            margin-bottom: 5px;
+            color: gray;
+            a:hover {
+                border: none;
+            }
+        }
+        b {
+            color: rgb(109, 109, 109);
+        }
+    }
+}
+
+#socials {
+    figure {
+        padding: 1.5% 3.5%;
+        i {
+            font-size: 40px;
+        }
+        img {
+            height: 80px;
+            width: 80px;
+            display: block;
+            margin: 0 auto 4px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            i {
+                font-size: 14px;
+            }
+        }
+    }
+}

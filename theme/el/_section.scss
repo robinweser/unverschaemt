@@ -1,0 +1,93 @@
+section {
+    color: rgb(80, 80, 80);
+    background: white;
+    div {
+        padding: 2.5% 5% 4%;
+        font-size: 22px;
+        max-width: 1300px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    h1 {
+        color: #646464;
+        font-size: 60px;
+    }
+    h2,
+    h2 a {
+        color: rgb(60, 60, 60);
+        font-size: 30px;
+    }
+    article {
+        @extend .hbox;
+    }
+}
+
+#team,
+#skill,
+#socials {
+    color: rgb(220, 220, 220);
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    h1 {
+        color: rgb(240, 240, 240);
+    }
+    b {
+        color: rgb(230, 230, 230);
+    }
+}
+#skill,
+#socials {
+    color: rgb(235, 235, 235);
+}
+
+#team h2 {
+    color: rgb(240, 240, 240);
+    font-size: 25px;
+}
+
+#team {
+    background: rgb(75, 75, 75);
+}
+
+#socials {
+    background: #737373;
+}
+
+#skill {
+    background: #737373;
+    hr {
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+#about {
+    p {
+        padding: 2%;
+    }
+}
+
+#contact {
+    div {
+        padding: 0 10% 8%;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        display: block;
+    }
+    textarea {
+        height: 150px;
+        max-width: 100%;
+        margin-bottom: 35px;
+    }
+    label {
+        width: 100%;
+        display: block;
+        text-align: left;
+        padding-left: 5px;
+    }
+    label i {
+        color: rgb(170, 170, 170);
+    }
+}

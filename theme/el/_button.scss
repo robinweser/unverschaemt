@@ -1,0 +1,21 @@
+button {
+    background: transparent;
+    padding: 10px 16px 12px;
+    @include border-radius(50px);
+    text-decoration: none;
+    border: 1px solid rgb(210, 210, 210);
+    font-size: 20px;
+    &:hover {
+        cursor: pointer;
+        border-color: rgb(100, 100, 100);
+        margin-top: 1px;
+        margin-bottom: -1px;
+    }
+    &.reverse {
+        border-color: rgb(100, 100, 100);
+        &:hover {
+            border-color: rgb(180, 180, 180);
+            color: rgb(100, 100, 100);
+        }
+    }
+}

@@ -1,0 +1,25 @@
+input,
+textarea {
+    padding: 13px 10px 13px 14px;
+    font-size: 20px;
+    border-radius: 15px;
+    border-style: solid;
+    position: relative;
+    display: inline-block;
+    border-color: rgb(211, 211, 211);
+    vertical-align: top;
+    border-width: 1px;
+    margin-right: -8px;
+    outline-width: 0;
+    outline: none;
+    &:hover {
+        border-color: rgba(128, 128, 128, 0.88);
+        background-color: rgba(224, 224, 224, 0.2);
+        outline: none;
+    }
+    &:focus {
+        border-color: rgba(128, 128, 128, 0.66);
+        background-color: rgba(224, 224, 224, 0.1);
+        outline: none;
+    }
+}
